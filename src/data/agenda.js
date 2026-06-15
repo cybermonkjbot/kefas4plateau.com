@@ -19,9 +19,9 @@ export const agendaAreas = [
     storyHeadline: "Security should feel calm, visible, and close to the people it protects.",
     storyBody:
       "The aim is safer neighbourhoods, stronger coordination, and faster prevention, with communities, lawful state actors, and local intelligence working in step.",
-    sceneAsset: "/generated/agenda/security-peace-scene.png",
+    sceneAsset: "/photos/agenda/security-peace-scene.jpg",
     sceneAlt:
-      "Editorial illustration of coordinated Nigerian security personnel and Plateau residents in a calm civic setting.",
+      "Kefas Ropshik during a public campaign filing moment representing leadership and public coordination.",
     palette: {
       bg: "#eef4f0",
       surface: "rgba(247, 252, 249, 0.74)",
@@ -70,9 +70,9 @@ export const agendaAreas = [
     storyHeadline: "Young people need useful skills, real mentors, and room to build.",
     storyBody:
       "The focus is practical learning that links directly to confidence, employability, and enterprise, in classrooms, training hubs, and community-led programmes.",
-    sceneAsset: "/generated/agenda/youth-empowerment-scene.png",
+    sceneAsset: "/photos/agenda/youth-empowerment-scene.jpg",
     sceneAlt:
-      "Editorial illustration of Nigerian youths in a modern classroom learning business and digital skills.",
+      "Participants gathered during a Kefiano Creative Hub training event.",
     palette: {
       bg: "#f7f1e8",
       surface: "rgba(255, 251, 244, 0.78)",
@@ -121,9 +121,9 @@ export const agendaAreas = [
     storyHeadline: "More jobs come when local enterprise can start, grow, and keep moving.",
     storyBody:
       "The agenda is to back small businesses, workshops, logistics, production, and markets with the kind of support that turns activity into durable employment.",
-    sceneAsset: "/generated/agenda/jobs-enterprise-scene.png",
+    sceneAsset: "/photos/agenda/jobs-enterprise-scene.jpg",
     sceneAlt:
-      "Editorial illustration of Plateau entrepreneurs, workshops, logistics, and local commerce in motion.",
+      "Kefiano Autos storefront and vehicle image representing local enterprise and commerce.",
     palette: {
       bg: "#f3efe8",
       surface: "rgba(255, 252, 248, 0.78)",
@@ -172,9 +172,9 @@ export const agendaAreas = [
     storyHeadline: "Healthcare should feel prepared, dignified, and closer to the people who need it.",
     storyBody:
       "The goal is stronger hospitals and clinics, better support for medical workers, and clearer confidence that care is available when families need it most.",
-    sceneAsset: "/generated/agenda/healthcare-scene.png",
+    sceneAsset: "/photos/agenda/healthcare-scene.jpg",
     sceneAlt:
-      "Editorial illustration of a capable Nigerian healthcare setting with doctors, nurses, and patients in a clean modern facility.",
+      "Chief Kefas Wungak Ropshik speaking with people outside the renovated JUTH Accident and Emergency Unit.",
     palette: {
       bg: "#eef5f7",
       surface: "rgba(247, 252, 255, 0.8)",
@@ -223,9 +223,9 @@ export const agendaAreas = [
     storyHeadline: "Plateau should grow, process, produce, and keep more of its value at home.",
     storyBody:
       "That means moving beyond raw output alone, into stronger processing, light manufacturing, logistics, and value chains that turn production into wider prosperity.",
-    sceneAsset: "/generated/agenda/agriculture-industry-scene.png",
+    sceneAsset: "/photos/agenda/agriculture-industry-scene.jpg",
     sceneAlt:
-      "Editorial illustration of Plateau agriculture, processing, logistics, and light industry working together.",
+      "Kefiano Farms image representing agriculture and local production in Plateau State.",
     palette: {
       bg: "#eef0e5",
       surface: "rgba(250, 252, 245, 0.78)",

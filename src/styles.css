@@ -1597,7 +1597,8 @@ h1 {
 
 .page-hero {
   background:
-    url("/generated/decorative/plateau-topography-wash.png") center / 860px 860px no-repeat,
+    radial-gradient(circle at 82% 22%, rgba(0, 135, 81, 0.12), transparent 24%),
+    radial-gradient(circle at 18% 28%, rgba(215, 25, 32, 0.07), transparent 20%),
     linear-gradient(112deg, rgba(0, 135, 81, 0.105), transparent 46%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(247, 250, 248, 0.92)),
     var(--off-white);
@@ -5092,7 +5093,8 @@ body.immersive-agenda-page .footer {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 28%),
-    url("/generated/decorative/plateau-topography-wash.png") center / cover no-repeat;
+    radial-gradient(circle at 50% 36%, rgba(15, 106, 79, 0.1), transparent 24%),
+    radial-gradient(circle at 18% 72%, rgba(148, 109, 75, 0.08), transparent 20%);
   opacity: 0.08;
   pointer-events: none;
 }

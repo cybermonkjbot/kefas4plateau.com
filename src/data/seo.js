@@ -20,7 +20,7 @@ export const seoSite = {
     "Kefas Ropshik",
   ],
   siteUrl: "https://kefiano4gov.name.ng",
-  defaultImage: "/generated/social/site-share.png",
+  defaultImage: "/social/site-share.jpg",
   defaultThemeColor: "#0f6a4f",
 };
 

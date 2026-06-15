@@ -128,8 +128,8 @@ export const projects = [
     summary:
       "Renovation and equipping of JUTH's Accident and Emergency Unit.",
     usefulFor: "Healthcare infrastructure",
-    image: "/generated/projects/juth-ae-cover.png",
-    imageAlt: "Editorial illustration representing the JUTH Accident and Emergency Unit renovation.",
+    image: "/photos/projects/juth-ae-cover.jpg",
+    imageAlt: "Chief Kefas Wungak Ropshik speaking with people outside the renovated JUTH Accident and Emergency Unit.",
   },
   {
     title: "Doctors' Welfare And Education Support",
@@ -141,8 +141,8 @@ export const projects = [
     summary:
       "Support for doctors, graduates, and medical welfare.",
     usefulFor: "Medical education and professional support",
-    image: "/generated/projects/doctors-welfare-cover.png",
-    imageAlt: "Editorial illustration representing doctors' welfare and medical education support.",
+    image: "/photos/projects/doctors-welfare-cover.jpg",
+    imageAlt: "Kefas Ropshik with doctors during a healthcare support event.",
   },
   {
     title: "Kefiano Creative Hub",
@@ -154,8 +154,8 @@ export const projects = [
     summary:
       "A Jos-based hub for skills, mentorship, and enterprise.",
     usefulFor: "Youth development and creative economy",
-    image: "/generated/projects/creative-hub-cover.png",
-    imageAlt: "Editorial illustration representing the Kefiano Creative Hub.",
+    image: "/photos/projects/creative-hub-cover.jpg",
+    imageAlt: "Kefas Ropshik speaking in front of a Kefiano Creative Hub backdrop.",
   },
   {
     title: "Plateau Youth Skills Training",
@@ -167,8 +167,8 @@ export const projects = [
     summary:
       "Creative and digital training for 119 Plateau youths.",
     usefulFor: "Youth skills and creative economy",
-    image: "/generated/projects/youth-training-cover.png",
-    imageAlt: "Editorial illustration representing Plateau youth creative and digital skills training.",
+    image: "/photos/projects/youth-training-cover.jpg",
+    imageAlt: "Participants gathered during a Kefiano Creative Hub training event.",
   },
   {
     title: "Widows Support Across Three LGAs",
@@ -180,8 +180,8 @@ export const projects = [
     summary:
       "Food support for over 1,190 widows in three LGAs.",
     usefulFor: "Social support outreach",
-    image: "/generated/projects/widows-support-cover.png",
-    imageAlt: "Editorial illustration representing widows support across three LGAs.",
+    image: "/photos/projects/widows-support-cover.jpg",
+    imageAlt: "Chief Kefas Ropshik with widows and orphans during a community outreach event in Jos.",
   },
   {
     title: "Birthday Outreach For Vulnerable Groups",
@@ -193,8 +193,8 @@ export const projects = [
     summary:
       "Food and startup support for vulnerable groups.",
     usefulFor: "Community welfare and social support",
-    image: "/generated/projects/birthday-outreach-cover.png",
-    imageAlt: "Editorial illustration representing birthday outreach for vulnerable groups.",
+    image: "/photos/projects/birthday-outreach-cover.jpg",
+    imageAlt: "Chief Kefas Ropshik during a Plateau community support event covered by local media.",
   },
   {
     title: "Food Relief Outreach",
@@ -206,8 +206,8 @@ export const projects = [
     summary:
       "Recurring food relief for vulnerable households.",
     usefulFor: "Recurring relief work",
-    image: "/generated/projects/food-relief-cover.png",
-    imageAlt: "Editorial illustration representing recurring food relief outreach.",
+    image: "/photos/projects/food-relief-cover.jpg",
+    imageAlt: "Kefas Ropshik during a community gathering used in outreach and programme media.",
   },
   {
     title: "Widows Entrepreneurship Support",
@@ -219,8 +219,8 @@ export const projects = [
     summary:
       "Startup support and enterprise training.",
     usefulFor: "Small-business and household enterprise",
-    image: "/generated/projects/enterprise-support-cover.png",
-    imageAlt: "Editorial illustration representing widows entrepreneurship support.",
+    image: "/photos/projects/enterprise-support-cover.jpg",
+    imageAlt: "Chief Kefas Ropshik during a Plateau community support event tied to startup and livelihood support.",
   },
 ];
 
@@ -364,7 +364,7 @@ export const publicServiceDetails = {
     summary:
       "This work includes the JUTH A&E renovation, support for doctors and graduates, and advocacy around better welfare for medical professionals.",
     emphasis: "Facility support, emergency care, and medical welfare.",
-    image: "/generated/public-service/healthcare-cover.jpg",
+    image: "/photos/public-service/healthcare-cover.jpg",
     imageAlt: "Chief Kefas Wungak Ropshik speaking with people outside the renovated JUTH Accident and Emergency Unit.",
     relatedProjectSlugs: [
       "juth-accident-emergency-unit-renovation",
@@ -402,7 +402,7 @@ export const publicServiceDetails = {
     summary:
       "The focus is on creative and digital skills, hub-based learning in Jos, and practical routes from training into paid work and enterprise.",
     emphasis: "Creative skills, digital readiness, and work pathways.",
-    image: "/generated/public-service/youth-innovation-cover.webp",
+    image: "/photos/public-service/youth-innovation-cover.jpg",
     imageAlt: "Youth participants posing with certificates during a Kefiano training and innovation programme.",
     relatedProjectSlugs: [
       "kefiano-creative-hub",
@@ -439,7 +439,7 @@ export const publicServiceDetails = {
     summary:
       "This work includes food relief, New Year widows support across multiple LGAs, and recurring household outreach.",
     emphasis: "Food relief, widows support, and household assistance.",
-    image: "/generated/public-service/community-support-cover.jpg",
+    image: "/photos/public-service/community-support-cover.jpg",
     imageAlt: "Chief Kefas Wungak Ropshik handing a support package to a woman during a community outreach event.",
     relatedProjectSlugs: [
       "new-year-support-widows-shendam-pankshin-kanke",
@@ -477,8 +477,8 @@ export const publicServiceDetails = {
     summary:
       "This work focuses on startup support, entrepreneurship training, and practical livelihood help for people moving toward self-reliance.",
     emphasis: "Startup support, training, and livelihood pathways.",
-    image: "/generated/public-service/enterprise-support-cover.png",
-    imageAlt: "Editorial illustration representing enterprise support and practical livelihoods in Plateau State.",
+    image: "/photos/public-service/enterprise-support-cover.jpg",
+    imageAlt: "Chief Kefas Ropshik during a Plateau community support event tied to startup and livelihood support.",
     relatedProjectSlugs: [
       "entrepreneurship-support-for-widows",
       "new-year-support-widows-shendam-pankshin-kanke",

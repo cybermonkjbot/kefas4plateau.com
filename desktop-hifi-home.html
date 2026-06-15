@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kefas Ropshik Desktop Hi-Fi Homepage</title>
+    <style>
+      :root {
+        --pdp-green: #008751;
+        --pdp-green-dark: #005f39;
+        --pdp-green-soft: #e6f4ee;
+        --pdp-red: #d71920;
+        --white: #ffffff;
+        --off-white: #f7faf8;
+        --ink: #17231d;
+        --muted: #647067;
+        --border: #d9e5de;
+        --shadow: 0 24px 70px rgba(13, 38, 27, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--white);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .top-line {
+        height: 5px;
+        background: linear-gradient(90deg, var(--pdp-green) 0 78%, var(--white) 78% 86%, var(--pdp-red) 86% 100%);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(18px);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1200px, calc(100% - 64px));
+        min-height: 76px;
+        margin: 0 auto;
+        gap: 28px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 3px;
+        min-width: 190px;
+      }
+
+      .brand strong {
+        color: var(--pdp-green-dark);
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .desktop-nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        border-bottom: 3px solid transparent;
+      }
+
+      .desktop-nav a:hover,
+      .desktop-nav a.active {
+        color: var(--pdp-green-dark);
+        border-bottom-color: var(--pdp-red);
+      }
+
+      .header-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 18px;
+        border-radius: 6px;
+        background: var(--pdp-green);
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 64px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 690px;
+        background:
+          linear-gradient(90deg, rgba(0, 135, 81, 0.1), transparent 44%),
+          var(--off-white);
+        overflow: hidden;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(470px, 0.98fr);
+        gap: 64px;
+        align-items: center;
+        min-height: 690px;
+        padding: 74px 0 86px;
+      }
+
+      .hero-copy {
+        position: relative;
+        padding-top: 22px;
+      }
+
+      .hero-copy::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 84px;
+        height: 5px;
+        background: var(--pdp-red);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 650px;
+        color: var(--ink);
+        font-size: clamp(58px, 5.2vw, 78px);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .hero-copy p {
+        max-width: 610px;
+        margin: 24px 0 0;
+        color: #425048;
+        font-size: 19px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 24px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .button.primary {
+        background: var(--pdp-green);
+        color: var(--white);
+      }
+
+      .button.secondary {
+        border: 1px solid var(--border);
+        background: var(--white);
+        color: var(--pdp-green-dark);
+      }
+
+      .text-link {
+        color: var(--pdp-green-dark);
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: var(--pdp-red);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 520px;
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(0, 95, 57, 0.06), rgba(0, 95, 57, 0.46)),
+          radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.76) 0 7%, transparent 8%),
+          linear-gradient(156deg, #b7d7c3 0 24%, #6f9f82 25% 48%, #d8e6d6 49% 51%, #406e50 52% 100%);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: auto -44px 0 -44px;
+        height: 180px;
+        background:
+          linear-gradient(7deg, rgba(0, 61, 37, 0.76) 0 44%, transparent 45%),
+          linear-gradient(-5deg, rgba(0, 135, 81, 0.58) 0 52%, transparent 53%);
+      }
+
+      .portrait-panel {
+        position: absolute;
+        right: 28px;
+        bottom: 28px;
+        width: 190px;
+        min-height: 235px;
+        display: grid;
+        align-content: end;
+        padding: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.72);
+        border-radius: 8px;
+        background:
+          linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(230, 244, 238, 0.84)),
+          linear-gradient(135deg, rgba(0, 135, 81, 0.18), transparent);
+      }
+
+      .portrait-panel span {
+        color: var(--pdp-green-dark);
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .section h2 {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(38px, 3vw, 48px);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .section p {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.76fr) minmax(360px, 0.6fr);
+        gap: 48px;
+        align-items: end;
+      }
+
+      .service-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        margin-top: 50px;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .service-item {
+        display: grid;
+        gap: 18px;
+        min-height: 270px;
+        padding: 34px 28px;
+        border-right: 1px solid var(--border);
+      }
+
+      .service-item:last-child {
+        border-right: 0;
+      }
+
+      .service-mark {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 6px;
+        background: var(--pdp-green-soft);
+        color: var(--pdp-green-dark);
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .service-item h3 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 22px;
+        line-height: 1.08;
+      }
+
+      .service-item p {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .project-feature {
+        background: var(--off-white);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: minmax(520px, 0.95fr) minmax(0, 1fr);
+        gap: 70px;
+        align-items: center;
+      }
+
+      .project-photo {
+        min-height: 430px;
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(0, 45, 29, 0.02), rgba(0, 45, 29, 0.38)),
+          linear-gradient(0deg, #6f7d73 0 18%, transparent 19%),
+          linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, 0.38) 9% 10%, transparent 11% 18%, rgba(255, 255, 255, 0.38) 19% 20%, transparent 21% 28%, rgba(255, 255, 255, 0.38) 29% 30%, transparent 31%),
+          linear-gradient(0deg, #b46a4b 0 66%, #d7e8ef 67% 100%);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .project-photo::before {
+        content: "";
+        display: block;
+        width: 74%;
+        height: 138px;
+        margin: 145px auto 0;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.64) 0 18%, transparent 19% 25%, rgba(255, 255, 255, 0.64) 26% 44%, transparent 45% 52%, rgba(255, 255, 255, 0.64) 53% 70%, transparent 71%),
+          #93543e;
+        border-top: 14px solid #e4efe8;
+      }
+
+      .section-rule {
+        width: 72px;
+        height: 5px;
+        margin: 0 0 24px;
+        background: var(--pdp-red);
+      }
+
+      .metadata {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        margin: 28px 0 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .metadata div {
+        padding: 18px 18px 18px 0;
+        border-right: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .metadata div:last-child {
+        border-right: 0;
+        padding-right: 0;
+        padding-left: 18px;
+      }
+
+      .metadata strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .youth-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(500px, 1fr);
+        gap: 78px;
+        align-items: center;
+      }
+
+      .fact-list {
+        display: grid;
+        gap: 14px;
+        margin: 28px 0 0;
+      }
+
+      .fact-row {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: #415047;
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      .fact-row::before {
+        content: "";
+        width: 11px;
+        height: 11px;
+        margin-top: 6px;
+        background: var(--pdp-green);
+        border-left: 4px solid var(--pdp-red);
+      }
+
+      .youth-photo {
+        min-height: 430px;
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(0, 95, 57, 0.02), rgba(0, 95, 57, 0.34)),
+          radial-gradient(circle at 20% 42%, #31463b 0 9%, transparent 10%),
+          radial-gradient(circle at 50% 36%, #26382f 0 8%, transparent 9%),
+          radial-gradient(circle at 78% 44%, #394e42 0 8%, transparent 9%),
+          linear-gradient(8deg, transparent 0 45%, rgba(255, 255, 255, 0.8) 46% 50%, transparent 51%),
+          linear-gradient(0deg, #a78969 0 33%, #d8e6dd 34% 100%);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .youth-photo::before {
+        content: "";
+        display: block;
+        width: 84%;
+        height: 150px;
+        margin: 202px auto 0;
+        background:
+          linear-gradient(90deg, #ffffff 0 18%, transparent 19% 28%, #ffffff 29% 48%, transparent 49% 58%, #ffffff 59% 78%, transparent 79%),
+          rgba(0, 61, 37, 0.42);
+        opacity: 0.72;
+      }
+
+      .closing {
+        background: var(--pdp-green-dark);
+        color: var(--white);
+      }
+
+      .closing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+      }
+
+      .closing h2,
+      .closing h3 {
+        color: var(--white);
+      }
+
+      .closing h3 {
+        margin: 0;
+        font-size: 34px;
+        line-height: 1.06;
+      }
+
+      .closing p {
+        color: #d7eadf;
+      }
+
+      .closing-links {
+        display: grid;
+        gap: 13px;
+        margin-top: 24px;
+      }
+
+      .closing-links a {
+        width: max-content;
+        color: var(--white);
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: var(--pdp-red);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+      }
+
+      .closing .actions {
+        margin-top: 46px;
+      }
+
+      .closing .button.primary {
+        background: var(--white);
+        color: var(--pdp-green-dark);
+      }
+
+      .closing .button.secondary {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .footer {
+        padding: 64px 0 34px;
+        background: #003d25;
+        color: var(--white);
+        border-top: 6px solid var(--pdp-red);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: minmax(300px, 1.2fr) 0.7fr 0.9fr 0.75fr;
+        gap: 60px;
+      }
+
+      .footer h2 {
+        margin: 0;
+        max-width: 310px;
+        font-size: 28px;
+        line-height: 1.06;
+      }
+
+      .footer p {
+        margin: 16px 0 0;
+        color: #cfe3d8;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer h3 {
+        margin: 0 0 14px;
+        color: var(--white);
+        font-size: 15px;
+      }
+
+      .footer a {
+        display: block;
+        padding: 6px 0;
+        color: #cfe3d8;
+        font-size: 14px;
+      }
+
+      .copyright {
+        margin-top: 50px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        color: #b9d4c7;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 1020px) {
+        .desktop-nav {
+          display: none;
+        }
+
+        .hero-inner,
+        .project-grid,
+        .youth-grid,
+        .closing-grid,
+        .section-head,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-line"></div>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#">
+          <strong>Kefas Ropshik</strong>
+          <span>Kefiano</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a class="active" href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Public Service</a>
+          <a href="#">Projects</a>
+          <a href="#">Agenda</a>
+          <a href="#">News</a>
+          <a href="#">Gallery</a>
+        </nav>
+        <a class="header-contact" href="#">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Chief Kefas Wungak Ropshik</h1>
+            <p>
+              Popularly known as Kefiano, Chief Kefas Wungak Ropshik is a
+              Plateau-born entrepreneur, philanthropist, and public figure
+              associated with healthcare support, youth development, and
+              community outreach.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#">Explore Projects</a>
+              <a class="button secondary" href="#">Read Biography</a>
+              <a class="text-link" href="#">View Latest Updates</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="portrait-panel">
+              <span>Client portrait replaces this slot</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section snapshot">
+        <div class="container">
+          <div class="section-head">
+            <h2>Public Service Snapshot</h2>
+            <p>
+              A concise view of documented areas of work associated with Chief
+              Ropshik and Kefiano Global Foundation.
+            </p>
+          </div>
+
+          <div class="service-list">
+            <a class="service-item" href="#">
+              <span class="service-mark">+</span>
+              <div>
+                <h3>Healthcare</h3>
+                <p>
+                  Renovation and support connected to healthcare institutions,
+                  including the JUTH Accident and Emergency Unit.
+                </p>
+              </div>
+            </a>
+            <a class="service-item" href="#">
+              <span class="service-mark">Y</span>
+              <div>
+                <h3>Youth & Innovation</h3>
+                <p>
+                  Creative and digital skills training through initiatives such
+                  as Kefiano Creative Hub.
+                </p>
+              </div>
+            </a>
+            <a class="service-item" href="#">
+              <span class="service-mark">C</span>
+              <div>
+                <h3>Community Support</h3>
+                <p>
+                  Reported outreach to widows, orphans, persons with
+                  disabilities, and vulnerable households.
+                </p>
+              </div>
+            </a>
+            <a class="service-item" href="#">
+              <span class="service-mark">E</span>
+              <div>
+                <h3>Enterprise</h3>
+                <p>
+                  A business background connected to Kefiano Autos and
+                  enterprise-focused public engagement.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-feature">
+        <div class="container project-grid">
+          <div class="project-photo" aria-hidden="true"></div>
+          <div>
+            <div class="section-rule"></div>
+            <h2>JUTH Accident And Emergency Unit</h2>
+            <p>
+              Through Kefiano Global Foundation, Chief Kefas Wungak Ropshik has
+              been publicly associated with the renovation and equipping of the
+              Accident and Emergency Unit at Jos University Teaching Hospital.
+              The intervention has been acknowledged by JUTH and reported by
+              several Nigerian media outlets.
+            </p>
+            <div class="metadata">
+              <div><strong>Category</strong>Healthcare</div>
+              <div><strong>Location</strong>Jos, Plateau State</div>
+              <div><strong>Status</strong>Reported completed</div>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="#">View Project</a>
+              <a class="button secondary" href="#">See Public Service</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section youth">
+        <div class="container youth-grid">
+          <div>
+            <h2>Youth And Creative Economy</h2>
+            <p>
+              Kefiano Creative Hub has been reported as a Jos-based platform for
+              creative, digital, and entrepreneurship training. Media reports say
+              one programme trained 119 Plateau youths in skills such as mobile
+              videography, smartphone photography, data analysis, content
+              writing, and production.
+            </p>
+            <div class="fact-list">
+              <div class="fact-row">Creative and digital skills</div>
+              <div class="fact-row">Reported 119 youth trainees</div>
+              <div class="fact-row">Jos-based hub</div>
+              <div class="fact-row">Training, mentorship, and enterprise focus</div>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="#">Explore Youth Projects</a>
+            </div>
+          </div>
+          <div class="youth-photo" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="container">
+          <div class="closing-grid">
+            <div>
+              <h3>Community Outreach</h3>
+              <p>
+                Public reports document outreach to widows, orphans, persons
+                with disabilities, and vulnerable households, including
+                food-relief and selected small-business support.
+              </p>
+              <div class="closing-links">
+                <a href="#">Widows Support</a>
+                <a href="#">Food Relief</a>
+                <a href="#">Enterprise Support</a>
+              </div>
+            </div>
+            <div>
+              <h3>Public Issue Areas</h3>
+              <p>
+                Reported public statements and engagements have focused on
+                security, youth empowerment, healthcare, jobs, agriculture,
+                infrastructure, and inclusive governance.
+              </p>
+              <div class="closing-links">
+                <a href="#">Security & Peace</a>
+                <a href="#">Jobs & Enterprise</a>
+                <a href="#">Agriculture & Industry</a>
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="#">View All Projects</a>
+            <a class="button secondary" href="#">Read Latest News</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h2>Chief Kefas W. Ropshik</h2>
+            <p>
+              Public profile, projects, and official updates connected to Chief
+              Kefas Wungak Ropshik, popularly known as Kefiano.
+            </p>
+          </div>
+          <nav aria-label="Footer explore navigation">
+            <h3>Explore</h3>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Public Service</a>
+            <a href="#">News</a>
+          </nav>
+          <nav aria-label="Footer public service navigation">
+            <h3>Public Service</h3>
+            <a href="#">Healthcare</a>
+            <a href="#">Youth & Innovation</a>
+            <a href="#">Community Support</a>
+            <a href="#">Enterprise Support</a>
+          </nav>
+          <nav aria-label="Footer contact navigation">
+            <h3>Contact</h3>
+            <a href="#">Media enquiries</a>
+            <a href="#">Official contact details</a>
+          </nav>
+        </div>
+        <div class="copyright">
+          © 2026 Kefas Wungak Ropshik. Project information should be verified
+          against official records before publication.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

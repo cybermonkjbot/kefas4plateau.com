@@ -1,0 +1,287 @@
+[
+  {
+    "id": "project-juth-ae",
+    "kind": "project",
+    "out": "public/generated/projects/juth-ae-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing the renovation of the JUTH Accident and Emergency Unit in Jos.\nScene/backdrop: a calm modern hospital frontage and emergency entrance in Plateau State, shown as an idealized civic scene rather than a literal photograph.\nSubject: upgraded emergency care infrastructure, clean signage, readiness, dignity, and practical delivery.\nStyle/medium: sophisticated editorial illustration, painted poster realism, not a real documentary photo.\nComposition/framing: square composition with a clear focal building, usable margins, and strong foreground-background separation.\nLighting/mood: early morning light, hopeful, disciplined, public-service focused.\nColor palette: deep greens, warm neutrals, off-white concrete, restrained red accents.\nConstraints: no politicians, no crowds, no logos, no text, no watermark, no ambulance branding, no invented news-photo look.\nAvoid: distorted architecture, dramatic disaster imagery, fantasy effects, excessive saturation.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:57:36.962Z"
+  },
+  {
+    "id": "project-doctors-welfare",
+    "kind": "project",
+    "out": "public/generated/projects/doctors-welfare-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing doctors' welfare and medical education support in Plateau State.\nScene/backdrop: a quiet hospital education setting with doctors in discussion near certificates, books, and medical tools, presented symbolically rather than as a real event.\nSubject: professional support, mentoring, recognition, and medical advancement.\nStyle/medium: polished editorial illustration with realistic anatomy and subtle painterly texture.\nComposition/framing: square composition, 2 to 3 healthcare professionals, clear depth, minimal clutter.\nLighting/mood: warm indoor daylight, respectful, uplifting, serious.\nColor palette: green, ivory, steel blue, muted brick accents.\nConstraints: no text, no logos, no watermark, no exaggerated smiles, no political rally cues.\nAvoid: uncanny faces, chaotic scenes, fake award stages, melodrama.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:58:00.332Z"
+  },
+  {
+    "id": "project-creative-hub",
+    "kind": "project",
+    "out": "public/generated/projects/creative-hub-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing the Kefiano Creative Hub as a place for youth skills, media, and enterprise learning in Jos.\nScene/backdrop: a contemporary training studio with cameras, laptops, microphones, notebooks, and collaborative worktables.\nSubject: young adults learning practical creative and digital skills together.\nStyle/medium: editorial illustration with grounded realism and clean composition, not a real photograph.\nComposition/framing: square composition, a central collaborative table, tools visible but uncluttered.\nLighting/mood: bright natural daylight, energetic, focused, optimistic.\nColor palette: warm neutrals, leafy green, charcoal, soft terracotta.\nConstraints: no text, no logos, no watermark, no futuristic sci-fi elements, no staged campaign imagery.\nAvoid: overcrowding, cartoonish proportions, trendy neon aesthetics.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:58:23.759Z"
+  },
+  {
+    "id": "project-youth-training",
+    "kind": "project",
+    "out": "public/generated/projects/youth-training-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing Plateau youth creative and digital skills training.\nScene/backdrop: a workshop environment with photography, writing, design, and digital training stations implied in one cohesive room.\nSubject: a cohort of Plateau youths learning and practicing useful skills.\nStyle/medium: sophisticated editorial illustration, semi-realistic, not a literal event photo.\nComposition/framing: square composition with layered activity zones and one strong central focal group.\nLighting/mood: optimistic daylight, active, disciplined, full of possibility.\nColor palette: Plateau green, warm cream, natural wood, muted red accents.\nConstraints: no text, no logos, no watermark, no graduation gowns, no corporate stock-photo feel.\nAvoid: fantasy technology, overblown motion, cluttered devices.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:58:47.753Z"
+  },
+  {
+    "id": "project-widows-support",
+    "kind": "project",
+    "out": "public/generated/projects/widows-support-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing widows support across three LGAs in Plateau State.\nScene/backdrop: a dignified community distribution moment with food support and orderly household assistance, presented as an editorial illustration rather than a documentary image.\nSubject: women receiving practical support in a respectful outdoor civic setting.\nStyle/medium: human-centered editorial illustration with realism, restraint, and dignity.\nComposition/framing: square composition with grouped figures, supplies visible, calm spatial structure.\nLighting/mood: soft daylight, compassionate, organized, hopeful.\nColor palette: earth tones, green, cream, muted maroon accents.\nConstraints: no text, no logos, no watermark, no pity framing, no distress sensationalism.\nAvoid: chaotic queues, exaggerated emotion, propaganda poster style.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:59:09.736Z"
+  },
+  {
+    "id": "project-birthday-outreach",
+    "kind": "project",
+    "out": "public/generated/projects/birthday-outreach-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing birthday outreach for widows, orphans, and vulnerable groups in Jos.\nScene/backdrop: a modest community hall with food packs and small-scale startup support materials arranged respectfully.\nSubject: vulnerable households receiving practical help in a calm, structured setting.\nStyle/medium: polished editorial illustration with realistic figures and minimal sentimentality.\nComposition/framing: square composition with one grounded focal interaction and visible aid items.\nLighting/mood: warm indoor light, calm, compassionate, steady.\nColor palette: soft cream, deep green, brown, restrained red.\nConstraints: no text, no logos, no watermark, no balloons, no party imagery, no over-celebration.\nAvoid: chaos, exaggerated staging, sentimental cliches.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T17:59:30.521Z"
+  },
+  {
+    "id": "project-food-relief",
+    "kind": "project",
+    "out": "public/generated/projects/food-relief-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing recurring food relief outreach for vulnerable households in Plateau State.\nScene/backdrop: a measured distribution setup with staple food bags, community volunteers, and orderly household collection.\nSubject: recurring practical relief work and community organization.\nStyle/medium: grounded editorial illustration, semi-realistic, not a literal photojournalistic image.\nComposition/framing: square composition with strong foreground aid items and balanced human scale.\nLighting/mood: clear daylight, purposeful, calm, humane.\nColor palette: sage green, khaki, warm white, muted brick.\nConstraints: no text, no logos, no watermark, no crisis theatrics, no disaster imagery.\nAvoid: panic, overcrowding, military cues.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:00:04.586Z"
+  },
+  {
+    "id": "project-enterprise-support",
+    "kind": "project",
+    "out": "public/generated/projects/enterprise-support-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website project cover illustration\nPrimary request: Create a refined editorial illustration representing widows entrepreneurship support and startup assistance in Plateau State.\nScene/backdrop: a small business mentoring scene with market-ready goods, notebooks, packaging materials, and conversation around practical enterprise.\nSubject: women building household enterprise with starter support and training.\nStyle/medium: polished editorial illustration with realistic textures and calm authority.\nComposition/framing: square composition with one mentoring interaction and a few enterprise objects in view.\nLighting/mood: warm daylight, empowering, practical, future-facing.\nColor palette: forest green, wheat, clay, off-white.\nConstraints: no text, no logos, no watermark, no luxury cues, no exaggerated wealth symbolism.\nAvoid: cartoon market scenes, generic office stock-photo styling.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 768,
+      "height": 768,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:00:30.516Z"
+  },
+  {
+    "id": "service-healthcare",
+    "kind": "service",
+    "out": "public/generated/public-service/healthcare-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website public-service category cover\nPrimary request: Create a refined editorial illustration for the healthcare category focused on better facilities and stronger medical care in Plateau State.\nScene/backdrop: a clean civic healthcare environment combining hospital buildings, emergency readiness, and professional care.\nSubject: public-health delivery, facilities, and medical support.\nStyle/medium: elegant editorial illustration with realistic architecture and restrained human presence.\nComposition/framing: square composition with architectural clarity and usable negative space.\nLighting/mood: steady morning light, credible, calm, public-service oriented.\nColor palette: hospital whites, green, slate, warm sandstone.\nConstraints: no text, no logos, no watermark, no campaign rally visuals.\nAvoid: fake photojournalism, overdrama, overly futuristic hospitals.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 900,
+      "height": 900,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:00:59.589Z"
+  },
+  {
+    "id": "service-youth",
+    "kind": "service",
+    "out": "public/generated/public-service/youth-innovation-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website public-service category cover\nPrimary request: Create a refined editorial illustration for youth and innovation focused on skill-building, mentorship, and practical opportunity in Plateau State.\nScene/backdrop: collaborative learning environment with creative tools, laptops, cameras, and workshop energy.\nSubject: young people gaining confidence through practical training and enterprise readiness.\nStyle/medium: modern editorial illustration with realistic proportions and subtle painterly finish.\nComposition/framing: square composition with one central cluster and depth behind it.\nLighting/mood: bright, hopeful, focused, local, grounded.\nColor palette: green, cream, charcoal, muted rust.\nConstraints: no text, no logos, no watermark, no sci-fi tropes, no generic startup clichés.\nAvoid: neon cyber aesthetics, exaggerated gadgetry.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 900,
+      "height": 900,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:01:25.615Z"
+  },
+  {
+    "id": "service-community",
+    "kind": "service",
+    "out": "public/generated/public-service/community-support-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website public-service category cover\nPrimary request: Create a refined editorial illustration for community support focused on household relief, dignity, and local care networks in Plateau State.\nScene/backdrop: calm community outreach setting with food support and neighborhood-scale assistance.\nSubject: direct support for vulnerable households and widows, shown with dignity and order.\nStyle/medium: human-centered editorial illustration with realistic textures and calm restraint.\nComposition/framing: square composition with clustered figures and supplies, balanced and readable.\nLighting/mood: soft daylight, compassionate, organized, grounded.\nColor palette: earth neutrals, green, warm cream, muted red accents.\nConstraints: no text, no logos, no watermark, no pity framing, no sensational hardship imagery.\nAvoid: visual chaos, propaganda styling.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 900,
+      "height": 900,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:01:54.557Z"
+  },
+  {
+    "id": "service-enterprise",
+    "kind": "service",
+    "out": "public/generated/public-service/enterprise-support-cover.png",
+    "prompt": "Use case: illustration-story\nAsset type: website public-service category cover\nPrimary request: Create a refined editorial illustration for enterprise support focused on local business, practical livelihoods, and productive work in Plateau State.\nScene/backdrop: a modest business environment combining small-scale trade, mentoring, and useful production.\nSubject: enterprise growth, confidence, and self-reliance.\nStyle/medium: sophisticated editorial illustration with realistic materials and grounded civic tone.\nComposition/framing: square composition with merchandise, notebooks, and work surfaces placed cleanly around a focal interaction.\nLighting/mood: warm daylight, capable, disciplined, optimistic.\nColor palette: forest green, beige, charcoal, clay.\nConstraints: no text, no logos, no watermark, no luxury imagery, no speculative finance symbols.\nAvoid: skyscraper business clichés, cartoon money graphics.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 900,
+      "height": 900,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:02:44.903Z"
+  },
+  {
+    "id": "decorative-paper-grain",
+    "kind": "decorative",
+    "out": "public/generated/decorative/plateau-paper-grain.png",
+    "prompt": "Use case: stylized-concept\nAsset type: website decorative texture\nPrimary request: Create a subtle premium paper-grain background texture for a civic website inspired by Plateau earth tones.\nScene/backdrop: abstract surface texture only.\nSubject: tactile paper grain, slight wash variation, calm handcrafted refinement.\nStyle/medium: high-resolution textured artwork, minimal, no objects.\nComposition/framing: seamless-looking square texture.\nLighting/mood: soft, understated, elegant.\nColor palette: warm parchment, pale stone, faint sage undertones.\nConstraints: no text, no logos, no watermark, no strong directional shadow, no central motif.\nAvoid: heavy stains, loud grunge, obvious repeated pattern.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 1024,
+      "height": 1024,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:03:11.441Z"
+  },
+  {
+    "id": "decorative-topography",
+    "kind": "decorative",
+    "out": "public/generated/decorative/plateau-topography-wash.png",
+    "prompt": "Use case: stylized-concept\nAsset type: website decorative background graphic\nPrimary request: Create a subtle abstract topographic line wash inspired by Plateau landscapes for a refined political website background.\nScene/backdrop: abstract pattern only.\nSubject: soft contour lines drifting through a warm neutral field.\nStyle/medium: elegant graphic artwork with painterly softness.\nComposition/framing: square composition, asymmetrical, plenty of quiet space.\nLighting/mood: calm, sophisticated, understated.\nColor palette: warm ivory, muted green-gray, pale sandstone.\nConstraints: no text, no logos, no watermark, no literal map labels, no bold center emblem.\nAvoid: loud cartography, technical infographic styling, strong contrast.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 1024,
+      "height": 1024,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:03:38.080Z"
+  },
+  {
+    "id": "social-site-share",
+    "kind": "social",
+    "out": "public/generated/social/site-share.png",
+    "prompt": "Use case: ads-marketing\nAsset type: website social share image background\nPrimary request: Create a polished editorial campaign-style background image for the Kefas Ropshik website social share card.\nScene/backdrop: a refined Plateau civic landscape collage with hints of community, architecture, and opportunity, designed to accept centered text overlay later.\nSubject: optimism, public service, youth opportunity, and grounded leadership without depicting a specific event.\nStyle/medium: elegant editorial illustration, premium, modern, credible.\nComposition/framing: wide composition with balanced negative space across the middle for title text.\nLighting/mood: sunrise atmosphere, hopeful, restrained, confident.\nColor palette: deep green, cream, sandstone, subtle red accents.\nConstraints: no text, no logos, no watermark, no crowd rally, no fake documentary scene.\nAvoid: clutter, overly patriotic tropes, harsh contrast.",
+    "request": {
+      "endpoint": "https://cribnoshprod-resource.openai.azure.com/openai/v1/images/generations",
+      "model": "gpt-image-1.5",
+      "size": "1024x1024",
+      "quality": "medium",
+      "output_format": "png"
+    },
+    "resize": {
+      "width": 1200,
+      "height": 630,
+      "fit": "cover"
+    },
+    "generatedAt": "2026-06-14T18:04:03.139Z"
+  }
+]

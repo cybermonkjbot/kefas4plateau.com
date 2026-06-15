@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/about", "destination": "/about/" },
+    { "source": "/public-service", "destination": "/public-service/" },
+    { "source": "/public-service/healthcare", "destination": "/public-service/healthcare/" },
+    { "source": "/public-service/youth-innovation", "destination": "/public-service/youth-innovation/" },
+    { "source": "/public-service/community-support", "destination": "/public-service/community-support/" },
+    { "source": "/public-service/enterprise-support", "destination": "/public-service/enterprise-support/" },
+    { "source": "/agenda", "destination": "/agenda/" },
+    { "source": "/agenda/security-peace", "destination": "/agenda/security-peace/" },
+    { "source": "/agenda/youth-empowerment", "destination": "/agenda/youth-empowerment/" },
+    { "source": "/agenda/jobs-enterprise", "destination": "/agenda/jobs-enterprise/" },
+    { "source": "/agenda/healthcare", "destination": "/agenda/healthcare/" },
+    { "source": "/agenda/agriculture-industry", "destination": "/agenda/agriculture-industry/" },
+    { "source": "/news", "destination": "/news/" },
+    { "source": "/gallery", "destination": "/gallery/" },
+    { "source": "/pledge", "destination": "/pledge/" },
+    { "source": "/admin", "destination": "/admin/" },
+    { "source": "/contact", "destination": "/contact/" },
+    { "source": "/projects", "destination": "/projects/" },
+    {
+      "source": "/projects/juth-accident-emergency-unit-renovation",
+      "destination": "/projects/juth-accident-emergency-unit-renovation/"
+    },
+    {
+      "source": "/projects/doctors-welfare-medical-education-support",
+      "destination": "/projects/doctors-welfare-medical-education-support/"
+    },
+    { "source": "/projects/kefiano-creative-hub", "destination": "/projects/kefiano-creative-hub/" },
+    {
+      "source": "/projects/plateau-youth-creative-digital-skills-training",
+      "destination": "/projects/plateau-youth-creative-digital-skills-training/"
+    },
+    {
+      "source": "/projects/new-year-support-widows-shendam-pankshin-kanke",
+      "destination": "/projects/new-year-support-widows-shendam-pankshin-kanke/"
+    },
+    {
+      "source": "/projects/birthday-outreach-widows-orphans-vulnerable-groups",
+      "destination": "/projects/birthday-outreach-widows-orphans-vulnerable-groups/"
+    },
+    {
+      "source": "/projects/rice-distribution-less-privileged-households",
+      "destination": "/projects/rice-distribution-less-privileged-households/"
+    },
+    {
+      "source": "/projects/entrepreneurship-support-for-widows",
+      "destination": "/projects/entrepreneurship-support-for-widows/"
+    }
+  ]
+}

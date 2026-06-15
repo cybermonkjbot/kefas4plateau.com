@@ -1,0 +1,32 @@
+{
+  "name": "kefas4plateau",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "node scripts/build-site.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "serve:dist": "node scripts/serve-dist.mjs",
+    "generate:images": "node scripts/generate-site-assets.mjs",
+    "generate:agenda": "node scripts/generate-agenda-assets.mjs",
+    "seo:verify": "node scripts/validate-seo.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "@vercel/blob": "^2.4.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "better-sqlite3": "^12.10.1",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.4",
+    "three": "^0.181.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.11"
+  }
+}

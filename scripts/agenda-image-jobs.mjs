@@ -1,0 +1,68 @@
+export const agendaImageJobs = [
+  {
+    id: "security-peace-scene",
+    slug: "security-peace",
+    out: "public/generated/agenda/security-peace-scene.png",
+    prompt: [
+      "Cinematic editorial illustration for a premium public priorities website in Nigeria.",
+      "Show a calm Plateau civic environment with Nigerian Army, Police, Civil Defence, and community safety presence working professionally and lawfully around ordinary residents.",
+      "Citizens should feel protected and at ease, not intimidated.",
+      "Include subtle Plateau urban character, civic order, clean composition, and visible trust between people and security institutions.",
+      "Emphasis on prevention, confidence, order, and public calm.",
+      "Avoid war-zone framing, chaos, aggressive weapon posing, fear, smoke, propaganda, logos, posters, and text in the image.",
+      "Use a polished illustrated campaign aesthetic, realistic people, rich depth, premium light, and human dignity.",
+    ].join(" "),
+  },
+  {
+    id: "youth-empowerment-scene",
+    slug: "youth-empowerment",
+    out: "public/generated/agenda/youth-empowerment-scene.png",
+    prompt: [
+      "Cinematic editorial illustration for a premium public priorities website in Nigeria.",
+      "Show Nigerian youths in a modern classroom and innovation training environment learning business, entrepreneurship, digital tools, collaboration, and presentation skills.",
+      "The room should feel current, practical, and aspirational, with mixed-gender young adults engaged confidently in learning.",
+      "Emphasize employability, confidence, enterprise readiness, and practical mentoring.",
+      "Use a refined campaign-quality illustration style with warm light, human dignity, realism, and no text baked into the image.",
+      "Avoid cartoon styling, generic Western classroom cues, political posters, logos, and exaggerated futurism.",
+    ].join(" "),
+  },
+  {
+    id: "jobs-enterprise-scene",
+    slug: "jobs-enterprise",
+    out: "public/generated/agenda/jobs-enterprise-scene.png",
+    prompt: [
+      "Cinematic editorial illustration for a premium public priorities website in Nigeria.",
+      "Show Plateau entrepreneurs, small business owners, workshop activity, retail energy, logistics movement, light production, and local commerce in one cohesive scene.",
+      "The composition should communicate enterprise, jobs, momentum, and productive local activity.",
+      "Include dignified Nigerian workers and founders, believable tools and products, and a polished modern economic atmosphere.",
+      "Use premium illustrated realism with layered depth, campaign-quality composition, and no text in the image.",
+      "Avoid clutter, caricature, empty corporate tropes, flags, posters, and heavy political symbolism.",
+    ].join(" "),
+  },
+  {
+    id: "healthcare-scene",
+    slug: "healthcare",
+    out: "public/generated/agenda/healthcare-scene.png",
+    prompt: [
+      "Cinematic editorial illustration for a premium public priorities website in Nigeria.",
+      "Show a clean capable Nigerian healthcare environment with doctors, nurses, support staff, and patients in a modern hospital or clinic setting.",
+      "The scene should communicate readiness, dignity, care access, professional confidence, and stronger facilities.",
+      "Include believable medical equipment and architectural detail without making the image feel cold or sterile.",
+      "Use premium editorial illustration, realistic human expression, soft strong light, and no text in the artwork.",
+      "Avoid distress imagery, overcrowded emergency chaos, political branding, and cartoon medical tropes.",
+    ].join(" "),
+  },
+  {
+    id: "agriculture-industry-scene",
+    slug: "agriculture-industry",
+    out: "public/generated/agenda/agriculture-industry-scene.png",
+    prompt: [
+      "Cinematic editorial illustration for a premium public priorities website in Nigeria.",
+      "Show Plateau agriculture linked to agro-processing, logistics, storage, and light industry in one integrated prosperous scene.",
+      "Feature Nigerian farmers, processors, transport, and production environments with a sense of value chains and local prosperity.",
+      "The composition should feel hopeful, productive, and rooted in real Plateau opportunity.",
+      "Use refined campaign-quality illustration with believable scale, human dignity, realism, and no text in the image.",
+      "Avoid rustic stereotypes, extreme machinery dominance, cartoon style, logos, posters, and unrelated political symbolism.",
+    ].join(" "),
+  },
+];

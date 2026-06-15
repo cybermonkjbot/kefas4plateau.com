@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { getAllSeoRoutes, getPageSeo } from "../src/data/seo.js";
+import { getAllSeoRoutes, getPageSeo, seoSite } from "../src/data/seo.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +40,7 @@ for (const route of routes) {
 }
 
 const robots = await readText("robots.txt");
-assert(robots.includes("Sitemap: https://kefas4plateau.com/sitemap.xml"), "robots.txt sitemap entry is missing");
+assert(robots.includes(`Sitemap: ${seoSite.siteUrl}/sitemap.xml`), "robots.txt sitemap entry is missing");
 
 const redirectHtml = await readText("projects/index.html");
 assert(redirectHtml.includes('http-equiv="refresh" content="0; url=/public-service"'), "Projects redirect page is missing");

@@ -19,7 +19,7 @@ export const seoSite = {
     "Kefas Wungak Ropshik",
     "Kefas Ropshik",
   ],
-  siteUrl: "https://kefas4plateau.com",
+  siteUrl: "https://kefiano4gov.name.ng",
   defaultImage: "/generated/social/site-share.png",
   defaultThemeColor: "#0f6a4f",
 };

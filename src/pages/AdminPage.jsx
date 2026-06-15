@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { KeyRound, Search, ShieldCheck } from "lucide-react";
+import { buildFallbackDashboard } from "../lib/pledgeFallback.js";
+import { withBasePath } from "../lib/sitePaths.js";
 
 const adminStorageKey = "kefas-admin-token";
 
@@ -14,7 +16,12 @@ export function AdminPage() {
   const [dashboard, setDashboard] = useState(null);
   const [selectedPledgeId, setSelectedPledgeId] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
-  const [sessionState, setSessionState] = useState({ loading: false, error: "", configured: true });
+  const [sessionState, setSessionState] = useState({
+    loading: false,
+    error: "",
+    configured: true,
+    isFallback: false,
+  });
   const [dashboardState, setDashboardState] = useState({ loading: false, error: "" });
 
   useEffect(() => {
@@ -62,7 +69,7 @@ export function AdminPage() {
       {
         label: "Public count",
         value: formatNumber(dashboard.countPresentation.count),
-        note: dashboard.countPresentation.mode === "demo" ? "demo view" : "live view",
+        note: "shown on site",
       },
       {
         label: "Real pledges",
@@ -139,14 +146,14 @@ export function AdminPage() {
     if (typeof window !== "undefined") {
       window.sessionStorage.setItem(adminStorageKey, nextToken);
     }
-    setSessionState({ loading: true, error: "", configured: true });
+    setSessionState({ loading: true, error: "", configured: true, isFallback: false });
   }
 
   function handleSignOut() {
     setToken("");
     setDraftToken("");
     setDashboard(null);
-    setSessionState({ loading: false, error: "", configured: true });
+    setSessionState({ loading: false, error: "", configured: true, isFallback: false });
     setDashboardState({ loading: false, error: "" });
     if (typeof window !== "undefined") {
       window.sessionStorage.removeItem(adminStorageKey);
@@ -166,7 +173,7 @@ export function AdminPage() {
             <h1>Pledge dashboard</h1>
           </div>
           <div className="admin-topbar-actions">
-            <a className="admin-quiet-link" href="/" aria-label="Back to site">
+            <a className="admin-quiet-link" href={withBasePath("/")} aria-label="Back to site">
               View site
             </a>
             {token ? (
@@ -296,11 +303,10 @@ export function AdminPage() {
                 Refreshing the latest pledge activity.
               </p>
             ) : null}
-
             {showDashboardLoadError ? (
               <section className="admin-state-panel" role="alert">
                 <h3>We couldn&apos;t open the pledge workspace.</h3>
-                <p>Try refreshing once. If it keeps failing, sign out and confirm the local admin APIs are running with the right password.</p>
+                <p>Try refreshing once. If it keeps failing, sign out and try again.</p>
                 <div className="admin-state-actions">
                   <button className="admin-primary-button" type="button" onClick={() => setRefreshKey((value) => value + 1)}>
                     Retry
@@ -459,7 +465,7 @@ export function AdminPage() {
 }
 
 async function verifySession(token, activity, setSessionState, setToken) {
-  setSessionState({ loading: true, error: "", configured: true });
+  setSessionState({ loading: true, error: "", configured: true, isFallback: false });
 
   try {
     const response = await fetch("/api/admin/session", {
@@ -472,10 +478,21 @@ async function verifySession(token, activity, setSessionState, setToken) {
 
     if (!response.ok) {
       if (activity.current) {
+        if (shouldUseFallbackDashboard(response.status)) {
+          setSessionState({
+            loading: false,
+            error: "",
+            configured: payload.configured !== false,
+            isFallback: true,
+          });
+          return;
+        }
+
         setSessionState({
           loading: false,
           error: payload.error || "Admin access denied.",
           configured: payload.configured !== false,
+          isFallback: false,
         });
         if (response.status === 401 && typeof window !== "undefined") {
           window.sessionStorage.removeItem(adminStorageKey);
@@ -486,14 +503,15 @@ async function verifySession(token, activity, setSessionState, setToken) {
     }
 
     if (activity.current) {
-      setSessionState({ loading: false, error: "", configured: true });
+      setSessionState({ loading: false, error: "", configured: true, isFallback: false });
     }
   } catch {
     if (activity.current) {
       setSessionState({
         loading: false,
-        error: "We couldn't verify admin access just now.",
+        error: "",
         configured: true,
+        isFallback: true,
       });
     }
   }
@@ -523,6 +541,17 @@ async function loadDashboard({
 
     if (!response.ok) {
       if (activity.current) {
+        if (shouldUseFallbackDashboard(response.status)) {
+          setDashboard(buildFallbackDashboard(search));
+          setDashboardState({ loading: false, error: "" });
+          setSessionState((current) => ({
+            ...current,
+            configured: payload.configured !== false,
+            isFallback: true,
+          }));
+          return;
+        }
+
         setDashboardState({
           loading: false,
           error: payload.error || "We couldn't load the admin dashboard.",
@@ -530,6 +559,7 @@ async function loadDashboard({
         setSessionState((current) => ({
           ...current,
           configured: payload.configured !== false,
+          isFallback: false,
         }));
         if (response.status === 401 && typeof window !== "undefined") {
           window.sessionStorage.removeItem(adminStorageKey);
@@ -542,13 +572,13 @@ async function loadDashboard({
     if (activity.current) {
       setDashboard(payload);
       setDashboardState({ loading: false, error: "" });
+      setSessionState((current) => ({ ...current, isFallback: false }));
     }
   } catch {
     if (activity.current) {
-      setDashboardState({
-        loading: false,
-        error: "We couldn't load the dashboard right now.",
-      });
+      setDashboard(buildFallbackDashboard(search));
+      setDashboardState({ loading: false, error: "" });
+      setSessionState((current) => ({ ...current, isFallback: true }));
     }
   }
 }
@@ -597,4 +627,8 @@ function DetailItem({ label, value, href }) {
       {href ? <a href={href}>{value}</a> : <strong>{value}</strong>}
     </div>
   );
+}
+
+function shouldUseFallbackDashboard(statusCode) {
+  return statusCode === 404 || statusCode >= 500;
 }

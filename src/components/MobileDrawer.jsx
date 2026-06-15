@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, X } from "lucide-react";
+import { withBasePath } from "../lib/sitePaths.js";
 import { Button } from "./Button.jsx";
 
 export function MobileDrawer({ isOpen, onClose, navItems, currentPath }) {
@@ -43,7 +44,7 @@ export function MobileDrawer({ isOpen, onClose, navItems, currentPath }) {
               <a
                 key={item.label}
                 className={`mobile-nav-link ${isActive(item.href, currentPath) ? "active" : ""}`}
-                href={item.href}
+                href={withBasePath(item.href)}
                 onClick={onClose}
               >
                 {item.label}
@@ -79,14 +80,14 @@ function MobileGroup({ item, isOpen, onToggle, onClose, currentPath }) {
       </button>
       {isOpen ? (
         <div className="mobile-subnav">
-          <a className={isActive(item.href, currentPath) ? "active" : ""} href={item.href} onClick={onClose}>
+          <a className={isActive(item.href, currentPath) ? "active" : ""} href={withBasePath(item.href)} onClick={onClose}>
             Overview
           </a>
           {item.children.map((child) => (
             <a
               className={isActive(child.href, currentPath) ? "active" : ""}
               key={child.label}
-              href={child.href}
+              href={withBasePath(child.href)}
               onClick={onClose}
             >
               {child.label}

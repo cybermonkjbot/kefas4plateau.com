@@ -1,11 +1,12 @@
 import marvengreyExpertsStrip from "../../assets/marvengrey-experts-strip.png";
 import { footerSections } from "../data/site.js";
+import { withBasePath } from "../lib/sitePaths.js";
 
 export function Footer() {
   return (
     <>
       <div className="footer-scene" aria-hidden="true">
-        <img src="/decorative/plateau-footer-silhouette.svg" alt="" width="1600" height="220" decoding="async" />
+        <img src={withBasePath("/decorative/plateau-footer-silhouette.svg")} alt="" width="1600" height="220" decoding="async" />
       </div>
       <footer className="footer">
         <div className="container">
@@ -24,7 +25,7 @@ export function Footer() {
               <nav key={section.title} aria-label={`${section.title} footer navigation`}>
                 <h3>{section.title}</h3>
                 {section.links.map((link) => (
-                  <a href={link.href} key={link.label}>
+                  <a href={withBasePath(link.href)} key={link.label}>
                     {link.label}
                   </a>
                 ))}

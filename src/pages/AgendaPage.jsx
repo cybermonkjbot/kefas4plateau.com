@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "../components/Button.jsx";
 import { agendaAreaBySlug, agendaAreas } from "../data/agenda.js";
+import { stripBasePath, withBasePath } from "../lib/sitePaths.js";
 
 const AgendaAmbientScene = lazy(() =>
   import("../components/AgendaAmbientScene.jsx").then((module) => ({ default: module.AgendaAmbientScene })),
@@ -56,7 +57,7 @@ function scrollPageTop() {
 }
 
 export function AgendaPage({ currentPath }) {
-  const path = currentPath || (typeof window === "undefined" ? "/agenda" : window.location.pathname);
+  const path = currentPath || (typeof window === "undefined" ? "/agenda" : stripBasePath(window.location.pathname));
   const slug = path.startsWith("/agenda/") ? path.replace("/agenda/", "") : "";
   const detail = slug ? agendaAreaBySlug[slug] : null;
 
@@ -364,7 +365,7 @@ function AgendaOverviewPage() {
               style={paletteStyle(area)}
             >
               <div className="agenda-mobile-visual">
-                <img src={area.sceneAsset} alt={area.sceneAlt} width="1024" height="1024" decoding="async" />
+                <img src={withBasePath(area.sceneAsset)} alt={area.sceneAlt} width="1024" height="1024" decoding="async" />
                 <div className="agenda-mobile-overlay" />
                 <div className="agenda-mobile-badge">{`0${index + 1}`}</div>
               </div>
@@ -388,7 +389,7 @@ function AgendaOverviewPage() {
                     <span key={highlight}>{highlight}</span>
                   ))}
                 </div>
-                <a className="button button--primary" href={area.href}>
+                <a className="button button--primary" href={withBasePath(area.href)}>
                   Explore {area.shortLabel}
                 </a>
               </div>
@@ -433,7 +434,7 @@ function AgendaDetailPage({ detail }) {
         <AgendaAmbientSceneLayer palette={detail.palette} activeIndex={detail.index} />
         <div className="container agenda-detail-grid">
           <div className="agenda-detail-copy">
-            <a className="agenda-back-link" href="/agenda">
+            <a className="agenda-back-link" href={withBasePath("/agenda")}>
               <ArrowLeft aria-hidden="true" size={16} strokeWidth={2.4} />
               Back to all priorities
             </a>
@@ -489,10 +490,10 @@ function AgendaDetailPage({ detail }) {
 
       <section className="agenda-detail-nav">
         <div className="container agenda-detail-nav-row">
-          <a className="agenda-detail-nav-link" href={previousArea.href}>
+          <a className="agenda-detail-nav-link" href={withBasePath(previousArea.href)}>
             <div className="agenda-detail-nav-media" aria-hidden="true">
               <img
-                src={previousArea.sceneAsset}
+                src={withBasePath(previousArea.sceneAsset)}
                 alt=""
                 width="1024"
                 height="1024"
@@ -506,13 +507,13 @@ function AgendaDetailPage({ detail }) {
               <strong>{previousArea.title}</strong>
             </div>
           </a>
-          <a className="button button--primary" href="/agenda">
+          <a className="button button--primary" href={withBasePath("/agenda")}>
             All priorities
           </a>
-          <a className="agenda-detail-nav-link agenda-detail-nav-link--next" href={nextArea.href}>
+          <a className="agenda-detail-nav-link agenda-detail-nav-link--next" href={withBasePath(nextArea.href)}>
             <div className="agenda-detail-nav-media" aria-hidden="true">
               <img
-                src={nextArea.sceneAsset}
+                src={withBasePath(nextArea.sceneAsset)}
                 alt=""
                 width="1024"
                 height="1024"
@@ -540,7 +541,7 @@ function AgendaSceneCard({ area, active, detailMode = false }) {
     <article className={`agenda-scene-card ${active ? "is-active" : ""} ${detailMode ? "is-detail" : ""}`}>
       <div className="agenda-scene-media">
         <img
-          src={area.sceneAsset}
+          src={withBasePath(area.sceneAsset)}
           alt={area.sceneAlt}
           width="1024"
           height="1024"
@@ -570,7 +571,7 @@ function AgendaInvestmentSectionContent() {
         <div className="agenda-investment-map-halo" />
         <img
           className="agenda-investment-map"
-          src="/generated/decorative/plateau-state-map-overlay.png"
+          src={withBasePath("/generated/decorative/plateau-state-map-overlay.png")}
           alt=""
           width="625"
           height="399"
@@ -588,8 +589,10 @@ function AgendaInvestmentSectionContent() {
 
 function AgendaRouteRedirect({ href }) {
   useEffect(() => {
-    if (window.location.pathname !== href) {
-      window.location.replace(href);
+    const targetHref = withBasePath(href);
+
+    if (window.location.pathname !== targetHref) {
+      window.location.replace(targetHref);
     }
   }, [href]);
 

@@ -1,3 +1,5 @@
+import { withBasePath } from "../lib/sitePaths.js";
+
 export function PageHero({ title, intro, aside, className = "", style }) {
   return (
     <section className={`page-hero ${className}`.trim()} style={style}>
@@ -27,7 +29,7 @@ export function InfoGrid({ items, className = "" }) {
             ) : null}
             <h3>{item.title}</h3>
             <p>{item.text || item.summary}</p>
-            {item.href ? <a href={item.href}>View details</a> : null}
+            {item.href ? <a href={withBasePath(item.href)}>View details</a> : null}
           </article>
         );
       })}

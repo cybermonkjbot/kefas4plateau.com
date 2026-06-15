@@ -5,6 +5,8 @@ import {
   focusOptions,
   roleOptions,
 } from "../data/pledgeOptions.js";
+import { getFallbackPresentedCount, saveFallbackPledge } from "../lib/pledgeFallback.js";
+import { withBasePath } from "../lib/sitePaths.js";
 
 export function PledgePage() {
   const [step, setStep] = useState(0);
@@ -294,21 +296,33 @@ export function PledgePage() {
     setSubmitError("");
 
     try {
-      const response = await fetch("/api/pledges", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          ...form,
-          selfieDataUrl,
-        }),
-      });
+      let response;
+
+      try {
+        response = await fetch("/api/pledges", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            ...form,
+            selfieDataUrl,
+          }),
+        });
+      } catch {
+        await completeFallbackSubmission(selfieDataUrl);
+        return;
+      }
 
       const payload = await response.json().catch(() => ({}));
 
       if (!response.ok) {
+        if (shouldFallbackToLocal(response.status)) {
+          await completeFallbackSubmission(selfieDataUrl);
+          return;
+        }
+
         throw new Error(payload.error || "We couldn't save your pledge just now.");
       }
 
@@ -324,6 +338,20 @@ export function PledgePage() {
     } finally {
       setIsSubmitting(false);
     }
+  }
+
+  async function completeFallbackSubmission(selfieDataUrl) {
+    saveFallbackPledge({
+      ...form,
+      selfieDataUrl,
+    });
+    window.dispatchEvent(
+      new CustomEvent("kefas-pledge-count-updated", {
+        detail: { count: getFallbackPresentedCount() },
+      }),
+    );
+    stopCamera();
+    setSubmitted(true);
   }
 
   function goNext() {
@@ -365,7 +393,7 @@ export function PledgePage() {
   if (submitted) {
     return (
       <>
-        <a className="flow-back" href="/" aria-label="Back to home">
+        <a className="flow-back" href={withBasePath("/")} aria-label="Back to home">
           Back
         </a>
         <main id="main">
@@ -374,21 +402,6 @@ export function PledgePage() {
               <p className="pledge-flow-kicker">Pledge received</p>
               <h1 id="pledge-success-title">Thank you, {firstName}.</h1>
               <p className="pledge-flow-lead">{confirmationLead}</p>
-              <div className="pledge-flow-summary">
-                <div className="pledge-flow-summary-item">
-                  <strong>How you want to help</strong>
-                  <p>{form.role}</p>
-                </div>
-                <div className="pledge-flow-summary-item">
-                  <strong>Focus</strong>
-                  <p>{form.focus}</p>
-                </div>
-                <div className="pledge-flow-summary-item">
-                  <strong>Availability</strong>
-                  <p>{form.availability}</p>
-                </div>
-              </div>
-              {form.note ? <p className="pledge-flow-note">“{form.note}”</p> : null}
               {selfieData ? (
                 <div className="pledge-flow-selfie-proof">
                   <img src={selfieData} alt={`${form.name} pledge selfie`} />
@@ -396,13 +409,13 @@ export function PledgePage() {
                 </div>
               ) : null}
               <p className="pledge-flow-followup">
-                We&apos;ll reach out at {form.email} when there&apos;s a strong place for you to plug in.
+                We'll reach out at {form.email} when there's a strong place for you to plug in.
               </p>
               <div className="pledge-flow-actions">
-                <a className="flow-pill primary" href="/">
+                <a className="flow-pill primary" href={withBasePath("/")}>
                   Back home
                 </a>
-                <a className="flow-pill" href="/news">
+                <a className="flow-pill" href={withBasePath("/news")}>
                   See updates
                 </a>
               </div>
@@ -415,7 +428,7 @@ export function PledgePage() {
 
   return (
     <>
-      <a className="flow-back" href="/" aria-label="Back to home">
+      <a className="flow-back" href={withBasePath("/")} aria-label="Back to home">
         Back
       </a>
       <main id="main">
@@ -500,4 +513,8 @@ export function PledgePage() {
       </main>
     </>
   );
+}
+
+function shouldFallbackToLocal(statusCode) {
+  return statusCode >= 500 || statusCode === 404;
 }

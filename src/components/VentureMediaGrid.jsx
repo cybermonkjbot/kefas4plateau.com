@@ -1,10 +1,12 @@
+import { withBasePath } from "../lib/sitePaths.js";
+
 export function VentureMediaGrid({ items }) {
   return (
     <div className="venture-media-grid">
       {items.map((item) => (
         <a
           className="venture-media-item"
-          href={item.href}
+          href={withBasePath(item.href)}
           key={item.title}
           rel="noreferrer"
           target="_blank"

@@ -1,8 +1,9 @@
 import { projects, publicServiceDetails, serviceItems } from "../data/site.js";
+import { stripBasePath, withBasePath } from "../lib/sitePaths.js";
 import { InfoGrid, PageHero } from "./PageShell.jsx";
 
 export function PublicServicePage({ currentPath }) {
-  const path = currentPath || (typeof window === "undefined" ? "/public-service" : window.location.pathname);
+  const path = currentPath || (typeof window === "undefined" ? "/public-service" : stripBasePath(window.location.pathname));
   const slug = path.startsWith("/public-service/") ? path.replace("/public-service/", "") : "";
   const detail = slug ? publicServiceDetails[slug] : null;
 
@@ -26,7 +27,7 @@ export function PublicServicePage({ currentPath }) {
           <h2>Related Projects</h2>
           <div className="compact-list">
             {projects.slice(0, 6).map((project) => (
-              <a href={`/projects/${project.slug}`} key={project.slug}>
+              <a href={withBasePath(`/projects/${project.slug}`)} key={project.slug}>
                 <strong>{project.title}</strong>
                 <span>{project.category} · {project.period}</span>
               </a>
@@ -61,7 +62,7 @@ function PublicServiceDetail({ detail }) {
         <div className="container">
           {detail.image ? (
             <div className="public-service-visual">
-              <img src={detail.image} alt={detail.imageAlt} width="900" height="900" decoding="async" />
+              <img src={withBasePath(detail.image)} alt={detail.imageAlt} width="900" height="900" decoding="async" />
             </div>
           ) : null}
           <h2>Coverage</h2>
@@ -69,7 +70,7 @@ function PublicServiceDetail({ detail }) {
             {detail.articles.map((article) => (
               <a
                 className="source-row"
-                href={article.href}
+                href={withBasePath(article.href)}
                 key={`${article.outlet}-${article.title}`}
                 rel="noreferrer"
                 target="_blank"
@@ -91,7 +92,7 @@ function PublicServiceDetail({ detail }) {
           <h2>Related Projects</h2>
           <div className="compact-list">
             {relatedProjects.map((project) => (
-              <a href={`/projects/${project.slug}`} key={project.slug}>
+              <a href={withBasePath(`/projects/${project.slug}`)} key={project.slug}>
                 <strong>{project.title}</strong>
                 <span>{project.category} · {project.period}</span>
               </a>

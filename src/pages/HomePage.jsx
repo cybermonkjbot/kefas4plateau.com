@@ -4,6 +4,8 @@ import { Button } from "../components/Button.jsx";
 import { VentureMediaGrid } from "../components/VentureMediaGrid.jsx";
 import { agendaAreas, featuredPressOutlets, projects } from "../data/site.js";
 import { featuredVentureMedia } from "../data/ventureMedia.js";
+import { getFallbackPresentedCount } from "../lib/pledgeFallback.js";
+import { withBasePath } from "../lib/sitePaths.js";
 import juthImage from "../../assets/juth-ae-unit.jpg";
 import kefasPortraitImage from "../../assets/kefas-2026-stonereporters-form.jpg";
 import foundationThumbImage from "../../assets/kefiano-foundation-video-thumb.jpg";
@@ -113,7 +115,7 @@ const recentWorkVisuals = [
 ];
 
 export function HomePage() {
-  const [pledgeCount, setPledgeCount] = useState(0);
+  const [pledgeCount, setPledgeCount] = useState(() => getFallbackPresentedCount());
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [activeCommunitySlide, setActiveCommunitySlide] = useState(0);
   const heroGestureStart = useRef({ x: 0, y: 0, interactive: false });
@@ -140,14 +142,23 @@ export function HomePage() {
           headers: { Accept: "application/json" },
         });
 
-        if (!response.ok) return;
+        if (!response.ok) {
+          if (active) {
+            setPledgeCount(getFallbackPresentedCount());
+          }
+          return;
+        }
 
         const payload = await response.json();
 
         if (active && Number.isFinite(payload.count)) {
           setPledgeCount(payload.count);
         }
-      } catch {}
+      } catch {
+        if (active) {
+          setPledgeCount(getFallbackPresentedCount());
+        }
+      }
     }
 
     function syncPledgeCount(event) {
@@ -293,7 +304,7 @@ export function HomePage() {
                   </div>
 
                   <aside className="home-hero-visuals" aria-label="Featured visuals">
-                    <a className="home-hero-panel home-hero-panel--portrait home-hero-panel--solo" href={currentHeroSlide.image.href}>
+                    <a className="home-hero-panel home-hero-panel--portrait home-hero-panel--solo" href={withBasePath(currentHeroSlide.image.href)}>
                       <img
                         src={currentHeroSlide.image.src}
                         alt={currentHeroSlide.image.alt}
@@ -367,7 +378,7 @@ export function HomePage() {
             </div>
 
             <div className="home-pledge-art" aria-hidden="true">
-              <img src="/decorative/kefiano4gov-pledge.png" alt="" />
+              <img src={withBasePath("/decorative/kefiano4gov-pledge.png")} alt="" />
             </div>
           </div>
         </div>
@@ -387,7 +398,7 @@ export function HomePage() {
 
           <div className="home-priorities-grid">
             {agendaAreas.map((area) => (
-              <a className="home-priorities-item" href={area.href} key={area.title}>
+              <a className="home-priorities-item" href={withBasePath(area.href)} key={area.title}>
                 <div>
                   <strong>{area.title}</strong>
                   <span>{area.priority}</span>
@@ -433,7 +444,7 @@ export function HomePage() {
 
             <div className="home-ledger-list">
               {recordProjects.map((project) => (
-                <a className="home-ledger-item" href={`/projects/${project.slug}`} key={project.slug}>
+                <a className="home-ledger-item" href={withBasePath(`/projects/${project.slug}`)} key={project.slug}>
                   <div>
                     <span>{project.category}</span>
                     <h3>{project.title}</h3>
@@ -455,7 +466,7 @@ export function HomePage() {
 
             <div className="home-agenda-list">
               {agendaAreas.map((area) => (
-                <a className="home-agenda-item" href={area.href} key={area.title}>
+                <a className="home-agenda-item" href={withBasePath(area.href)} key={area.title}>
                   <div>
                     <h3>{area.title}</h3>
                     <p>{area.summary}</p>
@@ -496,7 +507,7 @@ export function HomePage() {
               <Button href="/projects/juth-accident-emergency-unit-renovation" variant="primary">
                 View Project
               </Button>
-              <a className="text-link" href="/public-service/healthcare">
+              <a className="text-link" href={withBasePath("/public-service/healthcare")}>
                 More on Healthcare
               </a>
             </div>
@@ -527,7 +538,7 @@ export function HomePage() {
             </div>
 
             <div className="home-community-visual-wrap">
-              <a className="home-community-visual" href={`/projects/${currentCommunitySlide.slug}`}>
+              <a className="home-community-visual" href={withBasePath(`/projects/${currentCommunitySlide.slug}`)}>
                 <img
                   src={currentCommunitySlide.src}
                   alt={currentCommunitySlide.alt}
@@ -561,7 +572,7 @@ export function HomePage() {
             {recentWorkSlides.map((project, index) => (
               <a
                 className={`home-community-item ${index === activeCommunitySlide ? "is-active" : ""}`}
-                href={`/projects/${project.slug}`}
+                href={withBasePath(`/projects/${project.slug}`)}
                 key={project.slug}
                 onFocus={() => setActiveCommunitySlide(index)}
                 onMouseEnter={() => setActiveCommunitySlide(index)}
@@ -591,7 +602,7 @@ export function HomePage() {
                 >
                   {item.logoSrc ? (
                     <img
-                      src={item.logoSrc}
+                      src={withBasePath(item.logoSrc)}
                       alt={`${item.outlet} logo`}
                       width={item.logoWidth}
                       height={item.logoHeight}
@@ -615,14 +626,14 @@ export function HomePage() {
 
       <section className="home-statement" aria-labelledby="home-statement-title">
         <div className="container">
-          <a className="home-statement-card" href="/agenda">
+          <a className="home-statement-card" href={withBasePath("/agenda")}>
             <blockquote id="home-statement-title">
               “I don't want to be remembered for how much money I have, but how many lives I have
               touched.”
             </blockquote>
             <img
               className="home-statement-signature"
-              src="/generated/decorative/kefas-signature.png"
+              src={withBasePath("/generated/decorative/kefas-signature.png")}
               alt="Signature of Chief Kefas Wungak Ropshik"
               width="1856"
               height="378"

@@ -13,6 +13,7 @@ import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 import { PledgePage } from "./pages/PledgePage.jsx";
 import { ProjectsPage } from "./pages/ProjectsPage.jsx";
 import { PublicServicePage } from "./pages/PublicServicePage.jsx";
+import { stripBasePath, withBasePath } from "./lib/sitePaths.js";
 
 export function App({ initialPath }) {
   const [path, setPath] = useState(() => getCurrentPath(initialPath));
@@ -22,7 +23,7 @@ export function App({ initialPath }) {
     if (typeof window === "undefined") return undefined;
 
     function syncPath() {
-      setPath(normalizePath(window.location.pathname));
+      setPath(normalizePath(stripBasePath(window.location.pathname)));
     }
 
     window.addEventListener("popstate", syncPath);
@@ -72,8 +73,10 @@ function getPage(path) {
 
 function RouteRedirect({ href }) {
   useEffect(() => {
-    if (window.location.pathname !== href) {
-      window.history.replaceState({}, "", href);
+    const targetHref = withBasePath(href);
+
+    if (window.location.pathname !== targetHref) {
+      window.history.replaceState({}, "", targetHref);
       window.dispatchEvent(new PopStateEvent("popstate"));
     }
   }, [href]);
@@ -89,5 +92,5 @@ function normalizePath(path) {
 function getCurrentPath(initialPath) {
   if (initialPath) return normalizePath(initialPath);
   if (typeof window === "undefined") return "/";
-  return normalizePath(window.location.pathname);
+  return normalizePath(stripBasePath(window.location.pathname));
 }

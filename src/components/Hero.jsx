@@ -1,4 +1,5 @@
 import { Button } from "./Button.jsx";
+import { withBasePath } from "../lib/sitePaths.js";
 import { LandscapeVisual } from "./Visuals.jsx";
 
 export function Hero() {
@@ -17,7 +18,7 @@ export function Hero() {
             <Button href="/about" variant="secondary">
               About Kefiano
             </Button>
-            <a className="text-link" href="/news">
+            <a className="text-link" href={withBasePath("/news")}>
               News
             </a>
           </div>

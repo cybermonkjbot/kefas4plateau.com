@@ -1,3 +1,5 @@
+import { withBasePath } from "../lib/sitePaths.js";
+
 export function NotFoundPage() {
   return (
     <section className="section">
@@ -14,15 +16,15 @@ export function NotFoundPage() {
           <div className="useful-note">
             <h2>Quick links</h2>
             <div className="compact-list">
-              <a href="/about">
+              <a href={withBasePath("/about")}>
                 <strong>About Kefiano</strong>
                 <span>Background and public story</span>
               </a>
-              <a href="/public-service">
+              <a href={withBasePath("/public-service")}>
                 <strong>Public Service</strong>
                 <span>Healthcare, youth, community, and enterprise</span>
               </a>
-              <a href="/agenda">
+              <a href={withBasePath("/agenda")}>
                 <strong>Priorities</strong>
                 <span>Security, jobs, healthcare, and growth</span>
               </a>

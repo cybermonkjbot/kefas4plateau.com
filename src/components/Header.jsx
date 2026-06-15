@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems } from "../data/site.js";
+import { withBasePath } from "../lib/sitePaths.js";
 import { MobileDrawer } from "./MobileDrawer.jsx";
 
 export function Header({ currentPath = "/" }) {
@@ -47,8 +48,8 @@ export function Header({ currentPath = "/" }) {
       <div className="top-line" aria-hidden="true" />
       <header className={`site-header ${isScrolled ? `is-scrolled tone-${scrolledTone}` : ""}`}>
         <div className="header-inner" ref={headerRef}>
-          <a className="brand" href="/" aria-label="Kefas Ropshik home">
-            <img className="brand-mark" src="/decorative/pdp-umbrella.png" alt="" width="316" height="316" decoding="async" />
+          <a className="brand" href={withBasePath("/")} aria-label="Kefas Ropshik home">
+            <img className="brand-mark" src={withBasePath("/decorative/pdp-umbrella.png")} alt="" width="316" height="316" decoding="async" />
             <span className="brand-copy">
               <strong>Kefas Ropshik</strong>
               <span>Plateau State</span>
@@ -61,7 +62,7 @@ export function Header({ currentPath = "/" }) {
             ))}
           </nav>
 
-          <a className="header-contact" href="/pledge">
+          <a className="header-contact" href={withBasePath("/pledge")}>
             Pledge
           </a>
 
@@ -93,7 +94,7 @@ function DesktopNavItem({ item, currentPath }) {
 
   if (!item.children) {
     return (
-      <a className={active ? "active" : ""} href={item.href}>
+      <a className={active ? "active" : ""} href={withBasePath(item.href)}>
         {item.label}
       </a>
     );
@@ -101,13 +102,13 @@ function DesktopNavItem({ item, currentPath }) {
 
   return (
     <div className="desktop-nav-group">
-      <a className={active ? "active" : ""} href={item.href}>
+      <a className={active ? "active" : ""} href={withBasePath(item.href)}>
         {item.label}
         <ChevronDown aria-hidden="true" size={15} strokeWidth={2.4} />
       </a>
       <div className="desktop-subnav">
         {item.children.map((child) => (
-          <a key={child.label} href={child.href}>
+          <a key={child.label} href={withBasePath(child.href)}>
             {child.label}
           </a>
         ))}

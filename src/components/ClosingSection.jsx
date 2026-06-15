@@ -1,5 +1,6 @@
 import { Button } from "./Button.jsx";
 import { closingGroups } from "../data/site.js";
+import { withBasePath } from "../lib/sitePaths.js";
 
 export function ClosingSection() {
   return (
@@ -12,7 +13,7 @@ export function ClosingSection() {
               <p>{group.text}</p>
               <div className="closing-links">
                 {group.links.map((link) => (
-                  <a href={link.href} key={link.label}>
+                  <a href={withBasePath(link.href)} key={link.label}>
                     {link.label}
                   </a>
                 ))}

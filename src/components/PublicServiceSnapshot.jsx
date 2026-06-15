@@ -1,4 +1,5 @@
 import { serviceItems } from "../data/site.js";
+import { withBasePath } from "../lib/sitePaths.js";
 
 export function PublicServiceSnapshot() {
   return (
@@ -15,7 +16,7 @@ export function PublicServiceSnapshot() {
           {serviceItems.map((item) => {
             const Icon = item.icon;
             return (
-              <a className="service-item" href={item.href} key={item.title}>
+              <a className="service-item" href={withBasePath(item.href)} key={item.title}>
                 <span className="service-mark">
                   <Icon aria-hidden="true" size={21} strokeWidth={2.4} />
                 </span>

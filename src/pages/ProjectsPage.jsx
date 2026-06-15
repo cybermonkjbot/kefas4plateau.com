@@ -1,4 +1,5 @@
 import { projects } from "../data/site.js";
+import { withBasePath } from "../lib/sitePaths.js";
 import { PageHero } from "./PageShell.jsx";
 
 export function ProjectsPage({ slug }) {
@@ -18,11 +19,11 @@ export function ProjectsPage({ slug }) {
       <section className="section">
         <div className="container project-records project-records--grid">
           {projects.map((project) => (
-            <a className="project-record" href={`/projects/${project.slug}`} key={project.slug}>
+            <a className="project-record" href={withBasePath(`/projects/${project.slug}`)} key={project.slug}>
               {project.image ? (
                 <div className="project-record-media">
                   <img
-                    src={project.image}
+                    src={withBasePath(project.image)}
                     alt={project.imageAlt}
                     width="768"
                     height="768"
@@ -71,7 +72,7 @@ function ProjectDetail({ project }) {
           <article>
             {project.image ? (
               <div className="project-detail-visual">
-                <img src={project.image} alt={project.imageAlt} width="768" height="768" decoding="async" />
+                <img src={withBasePath(project.image)} alt={project.imageAlt} width="768" height="768" decoding="async" />
               </div>
             ) : null}
             <h2>Project Overview</h2>

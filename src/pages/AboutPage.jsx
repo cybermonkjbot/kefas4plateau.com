@@ -1,5 +1,13 @@
 import { ArrowUpRight, BriefcaseBusiness, HandHeart, HeartPulse, MapPin } from "lucide-react";
-import aboutHeroImage from "../../assets/kefiano-creative-hub.jpg";
+import communityReliefImage from "../../assets/about/community-relief.jpg";
+import celebrationFeastImage from "../../assets/about/celebration-feast.jpg";
+import leadershipGuestsImage from "../../assets/about/leadership-guests.jpg";
+import handshakeEventImage from "../../assets/about/handshake-event.jpg";
+import communitySeatingImage from "../../assets/about/community-seating.jpg";
+import ceremonialEntryImage from "../../assets/about/ceremonial-entry.jpg";
+import stagePortraitImage from "../../assets/about/stage-portrait.jpg";
+import communityAudienceImage from "../../assets/about/community-audience.jpg";
+import outdoorVisitImage from "../../assets/about/outdoor-visit.jpg";
 import juthLogo from "../../assets/juth-logo.png";
 import foundationLogo from "../../assets/kefiano-global-foundation-logo.jpg";
 import consensusLogo from "../../assets/the-consensus-logo.png";
@@ -49,31 +57,85 @@ const impactMilestones = [
   "Helped secure the release and empowerment of over 120 inmates from correctional facilities.",
 ];
 
+const leadPhotos = [
+  {
+    src: stagePortraitImage,
+    alt: "Kefiano standing on a decorated event stage in white attire with a ceremonial staff.",
+    caption: "Public life anchored in visibility, symbolism, and direct connection with people.",
+    className: "about-photo-card about-photo-card--featured",
+  },
+  {
+    src: outdoorVisitImage,
+    alt: "Kefiano speaking with residents during an outdoor visit beside a public building.",
+    caption: "Site visits and direct engagement on the ground.",
+    className: "about-photo-card",
+  },
+  {
+    src: communityReliefImage,
+    alt: "A community support handover with branded relief materials during an outdoor gathering.",
+    caption: "Community support that stays practical and visible.",
+    className: "about-photo-card",
+  },
+];
+
+const publicMoments = [
+  {
+    src: leadershipGuestsImage,
+    alt: "Kefiano with guests at a public event under draped lighting.",
+    caption: "Public moments that build relationships, trust, and wider recognition.",
+  },
+  {
+    src: handshakeEventImage,
+    alt: "Kefiano greeting another attendee during a formal event.",
+    caption: "A style of leadership shaped by presence, access, and conversation.",
+  },
+  {
+    src: celebrationFeastImage,
+    alt: "A ceremonial celebration scene with a large feast carried through an event hall.",
+    caption: "Large gatherings that signal reach, hospitality, and social capital.",
+  },
+];
+
+function PhotoCard({ photo }) {
+  return (
+    <figure className={photo.className || "about-photo-card"}>
+      <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+      <figcaption>{photo.caption}</figcaption>
+    </figure>
+  );
+}
+
 export function AboutPage() {
   return (
     <>
       <PageHero
         title="About Kefiano"
-        intro="Plateau roots, business experience, and community work."
+        intro="Plateau roots, enterprise, and visible community work."
         className="page-hero--about"
-        style={{ "--page-hero-image": `url(${aboutHeroImage})` }}
+        style={{ "--page-hero-image": `url(${stagePortraitImage})` }}
       />
+
+      <section className="section about-photo-lead-section">
+        <div className="container about-photo-lead">
+          {leadPhotos.map((photo) => (
+            <PhotoCard key={photo.src} photo={photo} />
+          ))}
+        </div>
+      </section>
 
       <section className="section">
         <div className="container narrative-grid">
           <article>
             <h2>Leadership Story</h2>
             <p>
-              Chief Kefas Wungak Ropshik, fondly known as Kefiano, is a prominent Nigerian
-              entrepreneur, philanthropist, and politician from Plateau State. Born in the late
-              1970s, he rose from a humble background to build a public profile rooted in business,
-              philanthropy, and community influence.
+              Chief Kefas Wungak Ropshik, widely known as Kefiano, is an entrepreneur,
+              philanthropist, and political figure from Plateau State. His public identity is built
+              around enterprise, direct community presence, and a visible record of giving.
             </p>
             <p>
-              He is best known for building the Kefiano Group, which includes Kefiano Autos,
-              Kefiano Farms, and Chillers by New Yorkers, and for using the Kefiano Global
-              Foundation as a vehicle for healthcare support, poverty alleviation, and direct
-              humanitarian intervention.
+              Over time, that profile has expanded through business ventures, the Kefiano Global
+              Foundation, and a broader public role that ties philanthropy to leadership and local
+              development.
             </p>
           </article>
 
@@ -97,14 +159,14 @@ export function AboutPage() {
           <article>
             <h2>Early Life And Business Career</h2>
             <p>
-              Kefiano was the last child in his family and grew up experiencing financial hardship,
-              an experience that shaped both his ambition and his later commitment to philanthropy.
+              Kefiano grew up in a modest setting, and that early experience is often linked to the
+              urgency behind both his ambition and his humanitarian work.
             </p>
             <p>
-              Starting with N200,000 from his father&apos;s retirement benefits, he built the
-              Kefiano brand from scratch into a wider business group spanning automobile sales,
-              agriculture, food, and hospitality. Today, the group is publicly associated with a
-              strong automobile presence in Abuja and a broader footprint across multiple sectors.
+              Starting with limited capital, he built the Kefiano name into a wider group with
+              links to automobiles, agriculture, food, and hospitality. That business base now
+              functions as both a commercial platform and part of the wider story behind his public
+              work.
             </p>
           </article>
 
@@ -116,6 +178,16 @@ export function AboutPage() {
                 and platform-building across autos, farming, food, and hospitality.
               </p>
             </div>
+
+            <figure className="about-inline-visual">
+              <img
+                src={communityAudienceImage}
+                alt="A large seated audience gathered under a canopy during a community event."
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Community turnout and listening spaces have remained part of the public image.</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -223,6 +295,16 @@ export function AboutPage() {
                 ))}
               </div>
             </div>
+
+            <figure className="about-inline-visual">
+              <img
+                src={communitySeatingImage}
+                alt="Kefiano seated with supporters during a daytime gathering."
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Support work is often framed around access, closeness, and direct contact with people.</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -251,6 +333,41 @@ export function AboutPage() {
                 philosophy that treats leadership as service.
               </p>
             </div>
+
+            <figure className="about-inline-visual">
+              <img
+                src={ceremonialEntryImage}
+                alt="Kefiano making an entrance at a formal gathering in white attire with a ceremonial staff."
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Symbolic public appearances are used to reinforce identity, message, and momentum.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <h2>Moments From The Journey</h2>
+              <p>
+                A few scenes that show the mix of community presence, ceremony, and public
+                engagement around the work.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-moment-grid">
+            {publicMoments.map((photo) => (
+              <figure className="about-moment" key={photo.src}>
+                <div className="about-moment-media">
+                  <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+                </div>
+                <figcaption>{photo.caption}</figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>

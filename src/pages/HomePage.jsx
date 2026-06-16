@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import { Button } from "../components/Button.jsx";
 import { VentureMediaGrid } from "../components/VentureMediaGrid.jsx";
 import { agendaAreas, featuredPressOutlets, projects } from "../data/site.js";
@@ -19,7 +19,9 @@ function renderHeroTitle(title, accent) {
   return (
     <>
       {before}
-      <span className="home-hero-title-accent">{accent}</span>
+      <a className="home-hero-title-accent" href={withBasePath("/plateau")}>
+        {accent}
+      </a>
       {after}
     </>
   );
@@ -304,19 +306,26 @@ export function HomePage() {
                   </div>
 
                   <aside className="home-hero-visuals" aria-label="Featured visuals">
-                    <a className="home-hero-panel home-hero-panel--portrait home-hero-panel--solo" href={withBasePath(currentHeroSlide.image.href)}>
-                      <img
-                        src={currentHeroSlide.image.src}
-                        alt={currentHeroSlide.image.alt}
-                        width="447"
-                        height="447"
-                        decoding="async"
-                      />
-                      <div className="home-hero-panel-copy">
-                        <strong>{currentHeroSlide.image.title}</strong>
-                        <span>{currentHeroSlide.image.text}</span>
-                      </div>
-                    </a>
+                    <div className="home-hero-panel-shell">
+                      <a className="home-hero-panel home-hero-panel--portrait home-hero-panel--solo" href={withBasePath(currentHeroSlide.image.href)}>
+                        <img
+                          src={currentHeroSlide.image.src}
+                          alt={currentHeroSlide.image.alt}
+                          width="447"
+                          height="447"
+                          decoding="async"
+                        />
+                        <div className="home-hero-panel-copy">
+                          <strong>{currentHeroSlide.image.title}</strong>
+                          <span>{currentHeroSlide.image.text}</span>
+                        </div>
+                      </a>
+
+                      <a className="home-hero-panel-play" href={withBasePath("/watch")} aria-label="Open full-screen video player">
+                        <Play size={18} strokeWidth={2.4} fill="currentColor" />
+                        <span className="home-hero-panel-play-label">Play</span>
+                      </a>
+                    </div>
                   </aside>
                 </div>
               ) : (
@@ -392,7 +401,7 @@ export function HomePage() {
               <h2 id="home-priorities-title">The work I want to move faster.</h2>
             </div>
             <p>
-              Security, jobs, healthcare, agriculture, and real opportunity for young people across the state.
+              Security, safer nightlife, jobs, healthcare, agriculture, and real opportunity for young people and tech founders across the state.
             </p>
           </div>
 
@@ -426,8 +435,8 @@ export function HomePage() {
       <section className="home-media">
         <div className="container">
           <div className="home-section-copy">
-            <h2>The network.</h2>
-            <p>A few of the businesses and institutions linked across the site.</p>
+            <h2>Businesses and initiatives.</h2>
+            <p>A closer look at some of the ventures and community work connected to Kefas Ropshik.</p>
           </div>
           <VentureMediaGrid items={featuredVentureMedia} />
         </div>
@@ -459,8 +468,8 @@ export function HomePage() {
             <div className="home-section-copy">
               <h2>What's getting backed.</h2>
               <p>
-                Healthcare, jobs, agriculture, safety, and practical
-                opportunity for young people.
+                Healthcare, jobs, agriculture, safer communities, and practical
+                opportunity for young people and new tech startups.
               </p>
             </div>
 
@@ -482,10 +491,10 @@ export function HomePage() {
       <section className="home-spotlight">
         <div className="container home-spotlight-grid">
           <div className="home-spotlight-copy">
-            <h2>One project, clearly delivered.</h2>
+            <h2>A clear example of delivery.</h2>
             <p>
-              The JUTH Accident and Emergency Unit remains a clear example of
-              practical delivery in Jos.
+              The JUTH Accident and Emergency Unit shows the kind of practical,
+              visible improvement people can point to in Jos.
             </p>
 
             <dl className="home-spotlight-meta">

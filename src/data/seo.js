@@ -107,6 +107,18 @@ const staticPageSeo = {
     ],
     topicKeywords: ["photo gallery", "projects", "outreach", "public moments"],
   },
+  "/plateau": {
+    title: "Plateau First | Safer Communities, Jobs, Healthcare, and Opportunity",
+    description:
+      "A clearer view of the Plateau this site points to: safer communities, stronger healthcare, useful jobs, and real opportunity for young people.",
+    image: seoSite.defaultImage,
+    pageType: "WebPage",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Plateau First", path: "/plateau" },
+    ],
+    topicKeywords: ["Plateau State", "jobs", "healthcare", "security", "youth opportunity"],
+  },
   "/contact": {
     title: "Contact | Media, Partnerships, and Enquiries",
     description:
@@ -140,6 +152,15 @@ const staticPageSeo = {
     breadcrumbs: [{ name: "Home", path: "/" }],
     topicKeywords: ["admin"],
   },
+  "/watch": {
+    title: "Watch | Kefas Ropshik",
+    description: "Watch short video updates connected to Kefas Ropshik in a full-screen vertical player.",
+    image: seoSite.defaultImage,
+    pageType: "VideoGallery",
+    robots: "noindex,follow",
+    breadcrumbs: [{ name: "Home", path: "/" }],
+    topicKeywords: ["video", "updates", "Plateau State"],
+  },
   "/404": {
     title: "Page Not Found | Kefas4Plateau",
     description:
@@ -162,6 +183,8 @@ export function getAllSeoRoutes() {
     ...agendaAreas.map((area) => area.href),
     "/news",
     "/gallery",
+    "/plateau",
+    "/watch",
     "/pledge",
     "/admin",
     "/contact",

@@ -13,12 +13,12 @@ export const agendaAreas = [
     shortLabel: "Security",
     href: "/agenda/security-peace",
     icon: ShieldCheck,
-    summary: "Safer communities through coordination, prevention, and trusted lawful support.",
-    focus: "Community safety and peacebuilding",
-    priority: "Prevention and lawful local support",
-    storyHeadline: "Security should feel calm, visible, and close to the people it protects.",
+    summary: "Safer communities, safer nightlife, and trusted lawful coordination.",
+    focus: "Safety, peacebuilding, and response",
+    priority: "Prevention and public confidence",
+    storyHeadline: "Security should feel calm, visible, and close.",
     storyBody:
-      "The aim is safer neighbourhoods, stronger coordination, and faster prevention, with communities, lawful state actors, and local intelligence working in step.",
+      "The aim is safer neighbourhoods, stronger coordination, and faster prevention so people can move, gather, and do business with confidence.",
     sceneAsset: "/photos/agenda/security-peace-scene.jpg",
     sceneAlt:
       "Kefas Ropshik during a public campaign filing moment representing leadership and public coordination.",
@@ -39,22 +39,22 @@ export const agendaAreas = [
       { label: "Civil Defence", x: "78%", y: "14%" },
       { label: "Community Safety", x: "70%", y: "76%" },
     ],
-    highlights: ["Safer neighbourhoods", "Faster coordination", "Community confidence"],
+    highlights: ["Safer neighbourhoods", "Safer nightlife", "Community confidence"],
     detailSections: [
       {
         title: "Trusted coordination",
         body:
-          "State security works best when agencies coordinate visibly, share information early, and keep people informed instead of leaving communities guessing.",
+          "Security works best when agencies coordinate visibly, share information early, and keep people informed.",
       },
       {
         title: "Prevention before escalation",
         body:
-          "The priority is to spot risks early, strengthen peacebuilding, and support rapid lawful response so tensions do not become wider crises.",
+          "The priority is to spot risks early, strengthen peacebuilding, and support fast lawful response.",
       },
       {
         title: "Confidence in public life",
         body:
-          "Safe roads, safe markets, safe schools, and safe neighbourhoods make everything else possible, from jobs to investment to everyday movement.",
+          "Safe roads, markets, schools, and nightlife help businesses stay open longer and communities move with ease.",
       },
     ],
   },
@@ -64,12 +64,12 @@ export const agendaAreas = [
     shortLabel: "Youth",
     href: "/agenda/youth-empowerment",
     icon: UsersRound,
-    summary: "Skills, mentorship, and enterprise pathways for young people.",
-    focus: "Skills, mentorship, and enterprise readiness",
+    summary: "Skills, mentorship, and income pathways for young people.",
+    focus: "Skills, mentorship, and readiness",
     priority: "Skills that lead to income",
-    storyHeadline: "Young people need useful skills, real mentors, and room to build.",
+    storyHeadline: "Young people need useful skills and room to build.",
     storyBody:
-      "The focus is practical learning that links directly to confidence, employability, and enterprise, in classrooms, training hubs, and community-led programmes.",
+      "The focus is practical learning that builds confidence, employability, and enterprise in classrooms and training hubs.",
     sceneAsset: "/photos/agenda/youth-empowerment-scene.jpg",
     sceneAlt:
       "Participants gathered during a Kefiano Creative Hub training event.",
@@ -95,32 +95,32 @@ export const agendaAreas = [
       {
         title: "Practical classroom learning",
         body:
-          "Training should feel current, applied, and useful, with business thinking, collaboration, communication, and digital confidence built into the experience.",
+          "Training should feel current, applied, and useful, with business and digital confidence built in.",
       },
       {
         title: "Mentorship that stays close",
         body:
-          "Young people move faster when they can learn from people already building businesses, solving problems, and navigating the realities of local growth.",
+          "Young people move faster when they can learn from people already building and solving locally.",
       },
       {
         title: "Pathways to income",
         body:
-          "The goal is not training for training’s sake. It is skills that become work, enterprise, or stronger readiness for the next opportunity.",
+          "The goal is not training alone. It is skills that become work, enterprise, or the next opportunity.",
       },
     ],
   },
   {
     slug: "jobs-enterprise",
-    title: "Jobs & Enterprise",
+    title: "Jobs, Enterprise & Tech",
     shortLabel: "Jobs",
     href: "/agenda/jobs-enterprise",
     icon: BriefcaseBusiness,
-    summary: "Enterprise, jobs, and local production.",
-    focus: "Local enterprise growth",
-    priority: "Support for small businesses, production, and jobs",
-    storyHeadline: "More jobs come when local enterprise can start, grow, and keep moving.",
+    summary: "Jobs, local production, and room for tech startups to grow.",
+    focus: "Enterprise growth and tech opportunity",
+    priority: "Support for startups, production, and jobs",
+    storyHeadline: "More jobs come when enterprise and tech can grow.",
     storyBody:
-      "The agenda is to back small businesses, workshops, logistics, production, and markets with the kind of support that turns activity into durable employment.",
+      "The agenda is to back small businesses, tech startups, production, and markets with support that turns local talent into durable jobs.",
     sceneAsset: "/photos/agenda/jobs-enterprise-scene.jpg",
     sceneAlt:
       "Kefiano Autos storefront and vehicle image representing local enterprise and commerce.",
@@ -141,22 +141,22 @@ export const agendaAreas = [
       { label: "Production", x: "74%", y: "14%" },
       { label: "Logistics", x: "69%", y: "79%" },
     ],
-    highlights: ["Local production", "Business support", "Visible job growth"],
+    highlights: ["Startup growth", "Business support", "Visible job growth"],
     detailSections: [
       {
         title: "Local business momentum",
         body:
-          "Growth should be visible on the ground, in trading activity, workshops, storefronts, and service businesses that can hire more people over time.",
+          "Growth should be visible in trading activity, workshops, storefronts, and service businesses that hire.",
       },
       {
-        title: "Support that reaches producers",
+        title: "Support that reaches builders",
         body:
-          "Small businesses need access, clarity, and practical support, not just speeches. The priority is to remove friction and help productive work scale.",
+          "Small businesses and tech founders need access, clarity, and practical support to build in Plateau.",
       },
       {
-        title: "Jobs that stay in Plateau",
+        title: "Technology that creates local advantage",
         body:
-          "When enterprise and production expand locally, more value stays at home and more families see real economic movement in everyday life.",
+          "Plateau can become fertile ground for tech startups serving Nigeria's large population from right here at home.",
       },
     ],
   },
@@ -166,12 +166,12 @@ export const agendaAreas = [
     shortLabel: "Health",
     href: "/agenda/healthcare",
     icon: HeartPulse,
-    summary: "Better facilities, stronger staff support, and more reliable care.",
-    focus: "Better facilities and stronger medical support",
+    summary: "Better facilities, stronger staff support, and reliable care.",
+    focus: "Facilities, staff support, and access",
     priority: "Better care access",
-    storyHeadline: "Healthcare should feel prepared, dignified, and closer to the people who need it.",
+    storyHeadline: "Healthcare should feel prepared and closer to people.",
     storyBody:
-      "The goal is stronger hospitals and clinics, better support for medical workers, and clearer confidence that care is available when families need it most.",
+      "The goal is stronger hospitals and clinics, better support for medical workers, and care families can count on.",
     sceneAsset: "/photos/agenda/healthcare-scene.jpg",
     sceneAlt:
       "Chief Kefas Wungak Ropshik speaking with people outside the renovated JUTH Accident and Emergency Unit.",
@@ -197,17 +197,17 @@ export const agendaAreas = [
       {
         title: "Facilities that work",
         body:
-          "Hospitals and clinics need to feel ready, with environments, equipment, and systems that support good care rather than slow it down.",
+          "Hospitals and clinics need the equipment and systems that support good care without delay.",
       },
       {
         title: "Support for health workers",
         body:
-          "Better care depends on the people delivering it. Stronger conditions, recognition, and professional support help staff serve with confidence.",
+          "Better care depends on stronger conditions, recognition, and support for the people delivering it.",
       },
       {
         title: "Care people can trust",
         body:
-          "Families need to believe that when something urgent happens, the system can respond with dignity, clarity, and speed.",
+          "Families need to know the system can respond with dignity, clarity, and speed when care is urgent.",
       },
     ],
   },
@@ -217,12 +217,12 @@ export const agendaAreas = [
     shortLabel: "Agriculture",
     href: "/agenda/agriculture-industry",
     icon: Sprout,
-    summary: "Agro-processing, value chains, and industry that keep more value local.",
-    focus: "Agro-processing and industrial development",
+    summary: "Agro-processing, value chains, and industry that keep value local.",
+    focus: "Processing, industry, and value chains",
     priority: "More value kept in Plateau",
-    storyHeadline: "Plateau should grow, process, produce, and keep more of its value at home.",
+    storyHeadline: "Plateau should grow, process, and keep more value at home.",
     storyBody:
-      "That means moving beyond raw output alone, into stronger processing, light manufacturing, logistics, and value chains that turn production into wider prosperity.",
+      "That means moving beyond raw output into stronger processing, logistics, and value chains that widen prosperity.",
     sceneAsset: "/photos/agenda/agriculture-industry-scene.jpg",
     sceneAlt:
       "Kefiano Farms image representing agriculture and local production in Plateau State.",
@@ -248,17 +248,17 @@ export const agendaAreas = [
       {
         title: "From output to value",
         body:
-          "Agriculture matters most when communities can process, package, move, and sell more of what they produce, instead of watching value leave too early.",
+          "Agriculture matters most when communities can process, package, move, and sell more of what they produce.",
       },
       {
         title: "Industry linked to production",
         body:
-          "Light industry, storage, logistics, and processing create the bridge between farm output and a wider economy that can hire, retain, and reinvest.",
+          "Light industry, storage, logistics, and processing connect farm output to a wider economy that can hire.",
       },
       {
         title: "Prosperity that stays local",
         body:
-          "When Plateau keeps more of the chain, it keeps more jobs, more expertise, and more opportunity close to the people building it.",
+          "When Plateau keeps more of the chain, it keeps more jobs, expertise, and opportunity close to home.",
       },
     ],
   },

@@ -3,6 +3,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { navItems } from "../data/site.js";
 import { withBasePath } from "../lib/sitePaths.js";
 import { MobileDrawer } from "./MobileDrawer.jsx";
+import plateauFirstLogo from "../../assets/plateau-first-logo.png";
 
 export function Header({ currentPath = "/" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,8 +53,16 @@ export function Header({ currentPath = "/" }) {
             <img className="brand-mark" src={withBasePath("/decorative/pdp-umbrella.png")} alt="" width="316" height="316" decoding="async" />
             <span className="brand-copy">
               <strong>Kefas Ropshik</strong>
-              <span>Plateau State</span>
+              <span className="brand-subtitle">4PlateauStateGovneror2027</span>
             </span>
+            <img
+              className="brand-campaign-logo"
+              src={plateauFirstLogo}
+              alt=""
+              width="225"
+              height="166"
+              decoding="async"
+            />
           </a>
 
           <nav className="desktop-nav" aria-label="Main navigation">

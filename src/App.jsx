@@ -11,8 +11,10 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { NewsPage } from "./pages/NewsPage.jsx";
 import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 import { PledgePage } from "./pages/PledgePage.jsx";
+import { PlateauPage } from "./pages/PlateauPage.jsx";
 import { ProjectsPage } from "./pages/ProjectsPage.jsx";
 import { PublicServicePage } from "./pages/PublicServicePage.jsx";
+import { WatchPage } from "./pages/WatchPage.jsx";
 import { stripBasePath, withBasePath } from "./lib/sitePaths.js";
 
 export function App({ initialPath }) {
@@ -64,8 +66,10 @@ function getPage(path) {
   }
   if (path === "/news") return { element: <NewsPage />, standalone: false };
   if (path === "/gallery") return { element: <GalleryPage />, standalone: false };
+  if (path === "/plateau") return { element: <PlateauPage />, standalone: false };
   if (path === "/pledge") return { element: <PledgePage />, standalone: true };
   if (path === "/admin") return { element: <AdminPage />, standalone: true };
+  if (path === "/watch") return { element: <WatchPage />, standalone: true };
   if (path === "/contact") return { element: <ContactPage />, standalone: false };
   if (path === "/404") return { element: <NotFoundPage />, standalone: false };
   return { element: <NotFoundPage />, standalone: false };

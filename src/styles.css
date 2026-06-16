@@ -3663,6 +3663,11 @@ dd,
   align-items: start;
 }
 
+.home-ledger-grid > *,
+.home-community-grid > * {
+  min-width: 0;
+}
+
 .home-community-main {
   display: grid;
   gap: 26px;

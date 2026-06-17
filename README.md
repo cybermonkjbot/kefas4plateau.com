@@ -1,6 +1,6 @@
 # Kefas4Plateau
 
-Campaign and public-service website for Kefas Ropshik, built with React and Vite, with a pledge flow, a lightweight account flow with recovery passphrases, and an admin dashboard.
+Campaign and public-service website for Kefas Ropshik, built with React and Vite, with a pledge flow and lightweight admin dashboard.
 
 ## Stack
 
@@ -23,7 +23,7 @@ The local API uses SQLite at `.data/pledges.sqlite` unless `PLEDGE_SQLITE_PATH` 
 ## Environment variables
 
 - `PLEDGE_ADMIN_PASSWORD`: required to open `/admin`
-- `BLOB_READ_WRITE_TOKEN`: required on Vercel so pledge submissions, account sessions, and the admin dashboard persist
+- `BLOB_READ_WRITE_TOKEN`: required on Vercel so pledge submissions and the admin dashboard persist
 - `PLEDGE_SQLITE_PATH`: optional local override for the SQLite file
 - `PLEDGE_COUNT_MODE`: optional, set to `demo` to show a softened public counter
 - `PLEDGE_COUNT_DEMO_JITTER_MAX`: optional demo counter variance

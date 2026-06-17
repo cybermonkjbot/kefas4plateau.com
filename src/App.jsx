@@ -3,7 +3,6 @@ import { Header } from "./components/Header.jsx";
 import { Seo } from "./components/Seo.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
-import { AccountPage } from "./pages/AccountPage.jsx";
 import { AdminPage } from "./pages/AdminPage.jsx";
 import { AgendaPage } from "./pages/AgendaPage.jsx";
 import { ContactPage } from "./pages/ContactPage.jsx";
@@ -69,7 +68,6 @@ function getPage(path) {
   if (path === "/gallery") return { element: <GalleryPage />, standalone: false };
   if (path === "/plateau") return { element: <PlateauPage />, standalone: false };
   if (path === "/pledge") return { element: <PledgePage />, standalone: true };
-  if (path === "/account") return { element: <AccountPage />, standalone: true };
   if (path === "/admin") return { element: <AdminPage />, standalone: true };
   if (path === "/watch") return { element: <WatchPage />, standalone: true };
   if (path === "/contact") return { element: <ContactPage />, standalone: false };

@@ -143,19 +143,6 @@ const staticPageSeo = {
     ],
     topicKeywords: ["pledge", "support", "volunteer", "campaign"],
   },
-  "/account": {
-    title: "Account | Secure Access and Recovery Passphrase",
-    description:
-      "Create an account, receive a 12-word recovery passphrase, and use that passphrase to sign in on any new device.",
-    image: seoSite.defaultImage,
-    pageType: "WebPage",
-    robots: "noindex,follow",
-    breadcrumbs: [
-      { name: "Home", path: "/" },
-      { name: "Account", path: "/account" },
-    ],
-    topicKeywords: ["account", "passphrase", "recovery", "login"],
-  },
   "/admin": {
     title: "Admin Dashboard | Kefas4Plateau",
     description: "Private dashboard for reviewing pledge activity and supporter details.",
@@ -199,7 +186,6 @@ export function getAllSeoRoutes() {
     "/plateau",
     "/watch",
     "/pledge",
-    "/account",
     "/admin",
     "/contact",
     ...projects.map((project) => `/projects/${project.slug}`),

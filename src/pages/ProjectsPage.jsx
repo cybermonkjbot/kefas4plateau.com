@@ -78,7 +78,7 @@ function ProjectDetail({ project }) {
             <h2>Project Overview</h2>
             <p>{project.summary}</p>
             <p>
-              This page brings together the basic public details of the project.
+              Key details about the project are shown here.
             </p>
           </article>
           <div className="record-table">

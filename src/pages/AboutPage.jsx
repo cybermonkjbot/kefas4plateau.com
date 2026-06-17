@@ -30,13 +30,13 @@ const relatedOrganizations = [
   },
   {
     name: "The Consensus",
-    text: "Youth-focused civic platform publicly presenting Kefas as lead mentor.",
+    text: "Youth community featuring Kefas as a mentor.",
     href: "https://theconsensus.africa/",
     logo: consensusLogo,
   },
   {
     name: "Kefiano Farms",
-    text: "Agriculture-facing venture connected to the wider Kefiano brand.",
+    text: "Agriculture venture focused on farming and local production.",
     href: "https://www.youtube.com/@KefianoFarms",
     logo: farmsLogo,
   },
@@ -110,7 +110,7 @@ export function AboutPage() {
     <>
       <PageHero
         title="About Kefiano"
-        intro="Plateau roots, enterprise, and visible community work."
+        intro="Plateau roots, business experience, and community work."
         className="page-hero--about"
         style={{ "--page-hero-image": `url(${stagePortraitImage})` }}
       />
@@ -129,12 +129,12 @@ export function AboutPage() {
             <h2>Leadership Story</h2>
             <p>
               Chief Kefas Wungak Ropshik, widely known as Kefiano, is an entrepreneur,
-              philanthropist, and political figure from Plateau State. His public identity is built
-              around enterprise, direct community presence, and a visible record of giving.
+              philanthropist, and political figure from Plateau State. He is known for business
+              work, direct community engagement, and a record of giving.
             </p>
             <p>
-              Over time, that profile has expanded through business ventures, the Kefiano Global
-              Foundation, and a broader public role that ties philanthropy to leadership and local
+              Over time, his work has expanded through business ventures, the Kefiano Global
+              Foundation, and a broader public role that links philanthropy, leadership, and local
               development.
             </p>
           </article>
@@ -164,9 +164,8 @@ export function AboutPage() {
             </p>
             <p>
               Starting with limited capital, he built the Kefiano name into a wider group with
-              links to automobiles, agriculture, food, and hospitality. That business base now
-              functions as both a commercial platform and part of the wider story behind his public
-              work.
+              links to automobiles, agriculture, food, and hospitality. That business background
+              remains a key part of his work and public life.
             </p>
           </article>
 
@@ -174,8 +173,8 @@ export function AboutPage() {
             <div className="useful-note">
               <h3>Business footprint</h3>
               <p>
-                The Kefiano Group is presented as a practical blend of commerce, local investment,
-                and platform-building across autos, farming, food, and hospitality.
+                The Kefiano Group spans autos, farming, food, and hospitality, with a focus on
+                local investment and growth.
               </p>
             </div>
 
@@ -186,7 +185,7 @@ export function AboutPage() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Community turnout and listening spaces have remained part of the public image.</figcaption>
+              <figcaption>Community turnout and listening have remained a visible part of the work.</figcaption>
             </figure>
           </div>
         </div>
@@ -206,7 +205,7 @@ export function AboutPage() {
             <div className="useful-note">
               <h3>Links</h3>
               <p>
-                Official sites and public pages where they are available.
+                Official links where available.
               </p>
             </div>
           </div>
@@ -236,7 +235,7 @@ export function AboutPage() {
         <div className="container about-organizations">
           <div className="about-organizations-copy">
             <h3>Related organizations</h3>
-            <p>Public institutions and initiatives connected to the work shown on this site.</p>
+            <p>Institutions and groups connected to this work.</p>
           </div>
 
           <div className="about-organizations-grid">
@@ -273,7 +272,7 @@ export function AboutPage() {
           <article>
             <h2>Philanthropy And Healthcare</h2>
             <p>
-              Through the Kefiano Global Foundation, his public reputation is closely tied to
+              Through the Kefiano Global Foundation, his work is closely tied to
               large-scale humanitarian work in Plateau State and beyond, especially in healthcare,
               household support, and poverty alleviation.
             </p>
@@ -319,9 +318,8 @@ export function AboutPage() {
               2023 elections under the Peoples Democratic Party.
             </p>
             <p>
-              The political message associated with him centers on moving Plateau from a consumer
-              state to a stronger production hub, while keeping a humanity-first approach at the
-              heart of governance, jobs, and public service.
+              His political focus centers on jobs, local production, and public service, with a
+              people-first approach to governance.
             </p>
           </article>
 
@@ -329,8 +327,8 @@ export function AboutPage() {
             <div className="useful-note">
               <h3>Political focus</h3>
               <p>
-                Production, jobs, healthcare, and practical community support, carried by a public
-                philosophy that treats leadership as service.
+                Production, jobs, healthcare, and practical community support, with leadership
+                treated as service.
               </p>
             </div>
 

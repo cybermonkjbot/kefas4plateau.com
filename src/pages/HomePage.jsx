@@ -79,8 +79,8 @@ const heroSlides = [
     secondaryCta: { href: "/public-service", label: "See Results" },
     stats: [
       { value: "Chillers", label: "Hospitality venture in Jos" },
-      { value: "Kefiano Autos", label: "Auto platform and customer-facing business" },
-      { value: "Creative Hub", label: "Youth training and media initiative" },
+      { value: "Kefiano Autos", label: "Auto business serving customers in Plateau" },
+      { value: "Creative Hub", label: "Youth training and media work" },
     ],
   },
 ];
@@ -372,7 +372,7 @@ export function HomePage() {
       <section className="home-pledge-count" aria-label="Pledge count">
         <div className="container">
           <div className="home-pledge-banner">
-            <p className="home-pledge-label">People who have pledged on this website</p>
+            <p className="home-pledge-label">People who have pledged so far</p>
             <div className="home-pledge-tally" aria-hidden="true">
               <strong className="home-pledge-total">{pledgeCount.toLocaleString()}</strong>
               <span className="home-pledge-callout">People want</span>
@@ -435,8 +435,8 @@ export function HomePage() {
       <section className="home-media">
         <div className="container">
           <div className="home-section-copy">
-            <h2>Businesses and initiatives.</h2>
-            <p>A closer look at some of the ventures and community work connected to Kefas Ropshik.</p>
+            <h2>Businesses and community work.</h2>
+            <p>Explore a few of the ventures and projects linked to Kefas Ropshik.</p>
           </div>
           <VentureMediaGrid items={featuredVentureMedia} />
         </div>
@@ -445,9 +445,9 @@ export function HomePage() {
       <section className="home-ledger">
         <div className="container home-ledger-grid">
           <div className="home-section-copy">
-            <h2>Work on the record.</h2>
+            <h2>Recent projects.</h2>
             <p>
-              Completed projects and visible interventions across healthcare,
+              Projects across healthcare,
               youth development, community support, and enterprise.
             </p>
 
@@ -466,7 +466,7 @@ export function HomePage() {
 
           <aside className="home-agenda">
             <div className="home-section-copy">
-              <h2>What's getting backed.</h2>
+              <h2>Key priorities.</h2>
               <p>
                 Healthcare, jobs, agriculture, safer communities, and practical
                 opportunity for young people and new tech startups.

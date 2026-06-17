@@ -327,7 +327,7 @@ export const contactMethods = [
 export const affiliatedVentures = [
   {
     title: "Kefiano Autos",
-    text: "Automotive business and dealership platform.",
+    text: "Automotive business and dealership.",
     href: "https://kefianoautos.co/",
     cta: "Visit site",
   },
@@ -345,13 +345,13 @@ export const affiliatedVentures = [
   },
   {
     title: "Kefiano Creative Hub",
-    text: "Creative and tech training initiative for young people in Plateau.",
+    text: "Creative and tech training for young people in Plateau.",
     href: "https://linktr.ee/kchub.ng",
     cta: "Explore hub",
   },
   {
     title: "Kefiano Farms",
-    text: "Public-facing farming channel and agriculture venture.",
+    text: "Farming and agriculture venture.",
     href: "https://www.youtube.com/@KefianoFarms",
     cta: "View channel",
   },

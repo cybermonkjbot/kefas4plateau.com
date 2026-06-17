@@ -15,7 +15,7 @@ export const featuredVentureMedia = [
   },
   {
     title: "Kefiano Autos",
-    text: "Automotive business and dealership platform.",
+    text: "Automotive business and dealership.",
     href: "https://kefianoautos.co/",
     image: autosImage,
     alt: "Interior photo of a vehicle listed on Kefiano Autos.",
@@ -25,7 +25,7 @@ export const featuredVentureMedia = [
   },
   {
     title: "Kefiano Creative Hub",
-    text: "Creative and youth-focused training initiative.",
+    text: "Creative training for young people.",
     href: "https://techpression.com/well-go-further-than-ai-and-empower-the-youths/",
     image: creativeHubImage,
     alt: "Event photo associated with the Kefiano Creative Hub launch and foundation backdrop.",

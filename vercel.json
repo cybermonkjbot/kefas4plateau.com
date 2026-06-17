@@ -19,6 +19,7 @@
     { "source": "/news", "destination": "/news/" },
     { "source": "/gallery", "destination": "/gallery/" },
     { "source": "/pledge", "destination": "/pledge/" },
+    { "source": "/account", "destination": "/account/" },
     { "source": "/admin", "destination": "/admin/" },
     { "source": "/contact", "destination": "/contact/" },
     { "source": "/projects", "destination": "/projects/" },

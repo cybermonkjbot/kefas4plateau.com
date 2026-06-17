@@ -3,6 +3,7 @@ import { stat } from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { handleAccountApiRequest } from "../server/accountApi.js";
 import { handleAdminApiRequest } from "../server/adminApi.js";
 import { handlePledgeApiRequest } from "../server/pledgeApi.js";
 
@@ -32,6 +33,15 @@ const server = http.createServer(async (request, response) => {
 
   if (pathname === "/api/pledges" || pathname === "/api/pledges/count") {
     await handlePledgeApiRequest(request, response);
+    return;
+  }
+
+  if (
+    pathname === "/api/accounts/register" ||
+    pathname === "/api/accounts/login" ||
+    pathname === "/api/accounts/session"
+  ) {
+    await handleAccountApiRequest(request, response);
     return;
   }
 

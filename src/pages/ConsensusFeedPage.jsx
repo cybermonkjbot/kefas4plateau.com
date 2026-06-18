@@ -12,8 +12,8 @@ import { PageHero } from "./PageShell.jsx";
 const filters = [
   { id: "all", label: "All" },
   { id: "updates", label: "Updates" },
-  { id: "media", label: "Media" },
-  { id: "coverage", label: "Coverage" },
+  { id: "media", label: "Video & Audio" },
+  { id: "coverage", label: "News" },
 ];
 
 const jobsPriority = agendaAreas.find((area) => area.slug === "jobs-enterprise");
@@ -33,20 +33,22 @@ const feedItems = [
     id: "post-1",
     filter: "updates",
     kind: "text",
-    author: "Consensus Feed",
+    author: "From the team",
     time: "Now",
-    location: "Plateau",
-    title: "This page now holds the signal in one place.",
+    location: "Across Plateau",
+    title: "A clearer read on what is moving across Plateau.",
     body:
-      "Projects, public priorities, field notes, media coverage, and useful next steps sit together here so people can scan what matters without bouncing through separate rooms.",
+      "Projects, priorities, media, and next steps now sit in one stream so it is easier to see what matters and where the work is heading.",
     href: "/pledge",
     hrefLabel: "Add your support",
+    engageHref: "/contact",
+    engageLabel: "Contact the team",
   },
   {
     id: "post-2",
     filter: "updates",
     kind: "photo",
-    author: "Public service update",
+    author: "Healthcare",
     time: juthProject.period,
     location: juthProject.location,
     title: juthProject.title,
@@ -54,37 +56,43 @@ const feedItems = [
     mediaSrc: stagePortraitImage,
     mediaAlt: "Kefas Ropshik speaking during a public event.",
     href: `/projects/${juthProject.slug}`,
-    hrefLabel: "Open project",
+    hrefLabel: "View the work",
+    engageHref: "/pledge",
+    engageLabel: "Support this work",
   },
   {
     id: "post-3",
     filter: "media",
     kind: "video",
-    author: "Video",
-    time: "Latest video",
-    location: "Watch",
+    author: "Video update",
+    time: "New video",
+    location: "Watch now",
     title: videoFeedItems[0]?.title || "Message to Plateau",
     body:
-      "A direct message framed for people who want the larger argument in a quicker format: trust, confidence, and a steadier path for Plateau.",
+      "A short message on trust, confidence, and a steadier path for Plateau.",
     mediaSrc: videoFeedItems[0]?.poster || stagePortraitImage,
     mediaAlt: "Poster image for a Plateau message video.",
     href: "/watch#trust-confidence",
     hrefLabel: "Watch video",
+    engageHref: "/pledge",
+    engageLabel: "Join the campaign",
   },
   {
     id: "post-4",
     filter: "media",
     kind: "audio",
-    author: "Radio conversation",
+    author: "On air",
     time: "Dr Fish FM",
-    location: "Interview",
+    location: "Radio interview",
     title: "What the economic agenda sounds like in conversation.",
     body:
-      "For people who would rather listen than read, this works like the feed's talk format: context, priorities, and a clearer sense of where the message is heading.",
+      "A radio conversation on jobs, opportunity, and the direction of the campaign.",
     mediaSrc: drFishInterviewPosterImage,
     mediaAlt: "Dr Fish FM interview poster.",
     href: "/watch#dr-fish-interview",
-    hrefLabel: "Listen in",
+    hrefLabel: "Listen now",
+    engageHref: "/contact",
+    engageLabel: "Share your view",
   },
   {
     id: "post-5",
@@ -95,68 +103,78 @@ const feedItems = [
     location: widowsProject.location,
     title: widowsProject.title,
     body:
-      "The feed should carry community support as plainly as it carries speeches or press. People need to see the actual work, not just hear the claims.",
+      "Community support belongs in full view. People should be able to see the work, not just hear about it.",
     mediaSrc: communityReliefImage,
     mediaAlt: "Community relief gathering in Plateau.",
     href: `/projects/${widowsProject.slug}`,
-    hrefLabel: "See details",
+    hrefLabel: "See the details",
+    engageHref: "/pledge",
+    engageLabel: "Support this work",
   },
   {
     id: "post-6",
     filter: "updates",
     kind: "photo",
-    author: "Youth and work",
+    author: "Youth opportunity",
     time: youthProject.period,
     location: youthProject.location,
     title: youthProject.title,
     body:
-      "Training, skills, and enterprise support need to appear in the same flow as public expectations, because that is how people actually judge whether the message is real.",
+      "Skills, training, and enterprise support matter because they create real openings for young people close to home.",
     mediaSrc: creativeHubImage,
     mediaAlt: "Creative hub training environment in Plateau.",
     href: `/projects/${youthProject.slug}`,
-    hrefLabel: "Open project",
+    hrefLabel: "View the work",
+    engageHref: "/pledge",
+    engageLabel: "Get involved",
   },
   {
     id: "post-7",
     filter: "updates",
     kind: "text",
-    author: "Priority",
-    time: "What people keep asking for",
+    author: "What matters most",
+    time: "Jobs and enterprise",
     location: jobsPriority?.title || "Jobs & Enterprise",
     title: jobsPriority?.title || "Jobs & Enterprise",
     body:
       jobsPriority?.summary ||
-      "A stronger jobs and enterprise focus keeps the conversation tied to real openings, useful work, and growth people can actually feel.",
+      "A stronger jobs and enterprise focus keeps the conversation tied to real openings and useful work.",
     href: "/agenda/jobs-enterprise",
-    hrefLabel: "See priority",
+    hrefLabel: "See the plan",
+    engageHref: "/pledge",
+    engageLabel: "Support this focus",
   },
   {
     id: "post-8",
     filter: "updates",
     kind: "text",
-    author: "Priority",
-    time: "Public need",
+    author: "What matters most",
+    time: "Healthcare",
     location: healthcarePriority?.title || "Healthcare",
     title: healthcarePriority?.title || "Healthcare",
     body:
       healthcarePriority?.summary ||
-      "Healthcare belongs in the same flow as jobs, security, and youth opportunity because people experience them together.",
+      "Healthcare belongs near the top because people feel it every day.",
     href: "/agenda/healthcare",
-    hrefLabel: "See priority",
+    hrefLabel: "See the plan",
+    engageHref: "/contact",
+    engageLabel: "Share your view",
   },
   {
     id: "post-9",
     filter: "updates",
     kind: "text",
-    author: "Priority",
-    time: "State signal",
+    author: "What matters most",
+    time: "Security and peace",
     location: securityPriority?.title || "Security & Peace",
     title: securityPriority?.title || "Security & Peace",
     body:
       securityPriority?.summary ||
-      "People need a clearer picture of safety, calm, and public confidence wherever they live and work.",
+      "People need to feel safer where they live, work, and move.",
     href: "/agenda/security-peace",
-    hrefLabel: "See priority",
+    hrefLabel: "See the plan",
+    engageHref: "/contact",
+    engageLabel: "Share your view",
   },
   {
     id: "post-10",
@@ -166,9 +184,11 @@ const feedItems = [
     time: guardianCoverage.date,
     location: guardianCoverage.type,
     title: guardianCoverage.title,
-    body: "External reporting that adds public signal around the campaign moment and how it is being read.",
+    body: "Coverage tracking how this campaign moment is being read in public.",
     href: guardianCoverage.href,
     hrefLabel: "Read coverage",
+    engageHref: "/contact",
+    engageLabel: "Share your view",
   },
   {
     id: "post-11",
@@ -178,9 +198,11 @@ const feedItems = [
     time: vanguardCoverage.date,
     location: vanguardCoverage.type,
     title: vanguardCoverage.title,
-    body: "A cleaner feed should also surface useful outside acknowledgement of the work already done.",
+    body: "Coverage tied to youth training and skills work already on the ground.",
     href: vanguardCoverage.href,
     hrefLabel: "Read coverage",
+    engageHref: "/pledge",
+    engageLabel: "Get involved",
   },
   {
     id: "post-12",
@@ -190,9 +212,11 @@ const feedItems = [
     time: juthCoverage.date,
     location: juthCoverage.type,
     title: juthCoverage.title,
-    body: "Institutional acknowledgement belongs in the stream because it helps people separate noise from evidence.",
+    body: "An institutional record of the JUTH work and how it was acknowledged publicly.",
     href: juthCoverage.href,
     hrefLabel: "Read coverage",
+    engageHref: "/contact",
+    engageLabel: "Contact the team",
   },
 ];
 
@@ -206,20 +230,12 @@ export function ConsensusFeedPage() {
     <>
       <PageHero
         title="Consensus Feed"
-        intro="One live feed for updates, media, coverage, and what Plateau should be paying attention to next."
+        intro="Updates, videos, interviews, and news from the work happening across Plateau."
       />
 
       <section className="section consensus-section">
         <div className="container consensus-feed-shell">
           <div className="consensus-feed-head">
-            <div>
-              <div className="section-rule" aria-hidden="true" />
-              <h2>The feed stays simple.</h2>
-              <p>
-                Scroll the signal, open what matters, and move when something deserves a response.
-              </p>
-            </div>
-
             <nav className="consensus-tabs" aria-label="Consensus feed filters">
               {filters.map((filter) => (
                 <button
@@ -236,8 +252,16 @@ export function ConsensusFeedPage() {
 
           <div className="consensus-mobile-actions" aria-label="Consensus feed quick actions">
             <a href={withBasePath("/watch")}>Watch</a>
-            <a href={withBasePath("/pledge")}>Pledge</a>
+            <a href={withBasePath("/pledge")}>Join</a>
             <a href={withBasePath("/contact")}>Contact</a>
+          </div>
+
+          <div className="consensus-engage-strip">
+            <p>Want to support the work or get in touch?</p>
+            <div>
+              <a href={withBasePath("/contact")}>Contact the team</a>
+              <a href={withBasePath("/pledge")}>Join the pledge</a>
+            </div>
           </div>
 
           <div className="consensus-stream">
@@ -247,10 +271,10 @@ export function ConsensusFeedPage() {
           </div>
 
           <div className="consensus-feed-footer">
-            <p>The right next step should never be buried.</p>
+            <p>Keep up with the work and take part.</p>
             <div>
               <a href={withBasePath("/pledge")}>Join the pledge</a>
-              <a href={withBasePath("/contact")}>Send something in</a>
+              <a href={withBasePath("/contact")}>Contact the team</a>
             </div>
           </div>
         </div>
@@ -260,8 +284,36 @@ export function ConsensusFeedPage() {
 }
 
 function FeedPost({ item }) {
+  const [shareState, setShareState] = useState("idle");
+
+  async function handleShare() {
+    if (typeof window === "undefined") return;
+
+    const shareUrl = `${window.location.origin}${withBasePath("/consensus-feed")}#${item.id}`;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: item.title,
+          url: shareUrl,
+        });
+        setShareState("shared");
+        window.setTimeout(() => setShareState("idle"), 1800);
+        return;
+      }
+
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareUrl);
+        setShareState("copied");
+        window.setTimeout(() => setShareState("idle"), 1800);
+      }
+    } catch {
+      setShareState("idle");
+    }
+  }
+
   return (
-    <article className={`consensus-post consensus-post--${item.kind}`}>
+    <article className={`consensus-post consensus-post--${item.kind}`} id={item.id}>
       <header className="consensus-post-head">
         <p>
           <span>{item.author}</span>
@@ -306,10 +358,22 @@ function FeedPost({ item }) {
       </div>
 
       <footer className="consensus-post-footer">
-        <a href={withBasePath(item.href)}>
-          {item.hrefLabel}
-          <ArrowUpRight aria-hidden="true" size={16} strokeWidth={2.4} />
-        </a>
+        <div className="consensus-post-actions">
+          <a className="consensus-post-action consensus-post-action--primary" href={withBasePath(item.href)}>
+            {item.hrefLabel}
+            <ArrowUpRight aria-hidden="true" size={16} strokeWidth={2.4} />
+          </a>
+
+          {item.engageHref ? (
+            <a className="consensus-post-action" href={withBasePath(item.engageHref)}>
+              {item.engageLabel}
+            </a>
+          ) : null}
+
+          <button className="consensus-post-action" type="button" onClick={handleShare}>
+            {shareState === "idle" ? "Share" : shareState === "shared" ? "Shared" : "Link copied"}
+          </button>
+        </div>
       </footer>
     </article>
   );

@@ -30,6 +30,7 @@ export const navItems = [
     key: "agenda",
     children: agendaAreas.map((area) => ({ label: area.title, href: area.href })),
   },
+  { label: "Consensus Feed", href: "/consensus-feed" },
 ];
 
 export const serviceItems = [
@@ -94,6 +95,7 @@ export const footerSections = [
     links: [
       { label: "About Kefiano", href: "/about" },
       { label: "Public Service", href: "/public-service" },
+      { label: "Consensus Feed", href: "/consensus-feed" },
       { label: "News", href: "/news" },
       { label: "Gallery", href: "/gallery" },
     ],
@@ -111,6 +113,7 @@ export const footerSections = [
     title: "Get Involved",
     links: [
       { label: "Pledge", href: "/pledge" },
+      { label: "Consensus Feed", href: "/consensus-feed" },
       { label: "Contact", href: "/contact" },
       { label: "Media and partnerships", href: "/contact" },
     ],

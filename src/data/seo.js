@@ -95,6 +95,18 @@ const staticPageSeo = {
     })),
     topicKeywords: ["news coverage", "media coverage", "Plateau politics", "public updates"],
   },
+  "/consensus-feed": {
+    title: "Consensus Feed | What Plateau Is Saying, Building, and Backing",
+    description:
+      "Follow one clear feed for Plateau priorities, field updates, public-service work, media signal, and ways people can get involved.",
+    image: seoSite.defaultImage,
+    pageType: "CollectionPage",
+    breadcrumbs: [
+      { name: "Home", path: "/" },
+      { name: "Consensus Feed", path: "/consensus-feed" },
+    ],
+    topicKeywords: ["consensus feed", "Plateau updates", "community signal", "public service updates"],
+  },
   "/gallery": {
     title: "Gallery | Projects, Outreach, and Public Moments",
     description:
@@ -182,6 +194,7 @@ export function getAllSeoRoutes() {
     "/agenda",
     ...agendaAreas.map((area) => area.href),
     "/news",
+    "/consensus-feed",
     "/gallery",
     "/plateau",
     "/watch",

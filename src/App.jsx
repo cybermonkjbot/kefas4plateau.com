@@ -6,6 +6,7 @@ import { AboutPage } from "./pages/AboutPage.jsx";
 import { AdminPage } from "./pages/AdminPage.jsx";
 import { AgendaPage } from "./pages/AgendaPage.jsx";
 import { ContactPage } from "./pages/ContactPage.jsx";
+import { ConsensusFeedPage } from "./pages/ConsensusFeedPage.jsx";
 import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
 import { NewsPage } from "./pages/NewsPage.jsx";
@@ -65,6 +66,7 @@ function getPage(path) {
     return { element: <AgendaPage currentPath={path} />, standalone: false };
   }
   if (path === "/news") return { element: <NewsPage />, standalone: false };
+  if (path === "/consensus-feed") return { element: <ConsensusFeedPage />, standalone: false };
   if (path === "/gallery") return { element: <GalleryPage />, standalone: false };
   if (path === "/plateau") return { element: <PlateauPage />, standalone: false };
   if (path === "/pledge") return { element: <PledgePage />, standalone: true };
